@@ -8,3 +8,4 @@ The files go into the folder of each scenery as you see them here.
 - Justsim EDDV 1.0: Fixed lights and ground for winter snow
 - Justsim EDDH 1.1: Fixed lights and ground for winter snow
 - Justsim EDDC 1.1: Fixed lights and ground for winter snow
+- Justsim EDDL 2.0: Fixed lights, ground was ok

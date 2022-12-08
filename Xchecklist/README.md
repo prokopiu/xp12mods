@@ -4,4 +4,4 @@ You need the Xchecklist plugin for this to work!
 https://forums.x-plane.org/index.php?/files/file/20785-xchecklist-linwinmac/
 
 - F50_clist.txt for the Carenado Fokker 50 (wip)
-- b738_4k_clist.txt Zibo Mod B738 4k version, copy and rename to b738_clist.txt for normal version
+- b738_4k_clist.txt Zibo Mod B738 4k version, copy and rename to b738_clist.txt for normal version (wip)

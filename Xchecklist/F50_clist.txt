@@ -1,0 +1,320 @@
+sw_define_colour:white:0.9,0.9,0.9
+sw_define_colour:grey:0.9,0.9,0.9
+sw_define_colour:blue:0.4,0.4,0.9
+sw_define_colour:orange:1.0,0.54,0.0
+
+sw_checklist:INTRODUCTION
+sw_itemvoid:Carenado F50 v1.1 clist
+sw_itemvoid:Version 1.1 by Kosta Prokopiu
+sw_itemvoid:[LP]=Captain Panel,[CP]=Center Panel, [RP]=Copilot side
+sw_itemvoid:[OP]=Overhead Panel, [PF]=Front Pedestal, [PR]=Rear Pedestal
+sw_itemvoid:[GS]=Glare Shield, [LS]=Left Side, [RS]=Right Side
+sw_item:Continue
+sw_continue:FLIGHT DECK SAFETY INSPECTION
+
+sw_checklist:FLIGHT DECK SAFETY INSPECTION:FLIGHT DECK SAFETY INSPECTION
+sw_item:DOORS (Control Panel)|OPEN:0(sim/cockpit2/switches/door_open[0]:5)||(sim/cockpit2/switches/door_open[1]:5)||(sim/cockpit2/switches/door_open[2]:5)||(sim/cockpit2/switches/door_open[3]:5)
+sw_item:STATIC ELEMENTS|DEPLOYED:thranda/views/staticelements:1
+sw_item:CIRCUIT BREAKERS|CHECKED:1:1
+sw_itemvoid_c:\white\- Check all circuit breakers are in or in compliance with dispatch requirements
+sw_item:LANDING GEAR [CP]|DOWN:sim/cockpit/switches/gear_handle_status:1
+sw_itemvoid_c:\white\- Check landing gear selector down
+sw_item:OXYGEN|CHECKED:1:1
+sw_itemvoid_c:\white\- Minimum pressure: 1450 psi/3 crew or 1000 psi/2 crew
+sw_item:EMERGENCY EQUIPMENT|CHECKED:1:1
+sw_item:AIRCRAFT DOCUMENTS|CHECKED:1:1
+sw_itemvoid_c:\white\- Check avitab has all needed documents loaded
+sw_item:Continue...
+sw_continue:FLIGHT DECK PREPARATION
+
+sw_checklist:FLIGHT DECK PREPARATION:FLIGHT DECK PREPARATION
+sw_itemvoid_c:\orange\===== SIDE PANELS =====
+sw_item:FRESH AIR SCOOPS [LS],[RS]|SHUT:(thranda/anim/PilotAir:0)&&(thranda/anim/CoPilotAir:0)
+sw_itemvoid_c:\orange\===== OVERHEAD PANEL =====
+sw_item:FLIGHT RECORDER [OP]|SET:(thranda/FlightDataRecorder/FlightNumberDate2:!100)&&(thranda/FlightDataRecorder/FlightNumberDate2:!-100)
+sw_itemvoid_c:\white\- Insert date on flight data entry panel
+sw_item:HEADING MODE SWITCH [OP]|SLAVED:(sim/cockpit/gyros/gyr_free_slaved[3]:1)&&(sim/cockpit/gyros/gyr_free_slaved[2]:1)
+sw_item:ENGINE FIRE CONTROL [OP]|CHECKED:(sim/cockpit2/engine/actuators/fire_extinguisher_on[0]:0)&&(sim/cockpit2/engine/actuators/fire_extinguisher_on[1]:0)
+sw_itemvoid_c:\white\- Check fire handles in and latched
+sw_item:AIR CONDITIONING [OP]|CHECKED:(thranda/Rheo[79]:>0)&&(thranda/Rheo[78]:>0)
+sw_itemvoid_c:\white\- Set temperature selectors as required
+sw_item:PRESSURIZATION [OP]|CHECKED
+sw_itemvoid_c:\white\- Check RATE control full decrease
+sw_item:GPU|CONNECTED:sim/cockpit/electrical/gpu_on:1
+sw_itemvoid_c:\white\- Use Carenado C menu to activate ground power
+sw_item:BATTERIES [OP]|CHECK ON:sim/cockpit/electrical/battery_on:1
+sw_item:EXT POWER [OP]|ON:thranda/electrical/ExtPwrGPUSw:1
+sw_item:COCKPIT LIGHTS [PR]|AS REQUIRED:1:1
+sw_item:SEAT BELT - NO SMOKING [OP]|ON - AUTO:(thranda/Switch[16]:2)&&(thranda/Rheo[68]:0)
+sw_item:AUTO EL FEEL CTL [OP]|ON:thranda/ButtonAnnLt2[1]:0
+sw_item:AGENT LOW PRESS LIGHTS [OP]|CHECK OUT:(thranda/anim/FireExtLlt:0)&&(thranda/anim/FireExtRlt:0)
+sw_item:FIRE LOOP1 & LOOP2 [OP]|ON:(thranda/ButtonAnnLt2[31]:0)&&(thranda/ButtonAnnLt2[32]:0)
+sw_item:AVIONICS SG/DU-XFR LIGHTS [OP]|OFF:(thranda/ButtonAnnLt2[33]:0)&&(thranda/ButtonAnnLt2[34]:0)&&(thranda/ButtonAnnLt2[35]:0)&&(thranda/ButtonAnnLt2[36]:0)
+sw_item:DC XFEED [OP]|OFF:thranda/ButtonAnnLt2[65]:0
+sw_item:AC XFEED [OP]|ON:thranda/ButtonAnnLt2[67]:0
+sw_item:TRU L & R [OP]|ON:(thranda/ButtonAnnLt2[66]:0)&&(thranda/ButtonAnnLt2[68]:0)
+sw_item:GPWS [PF]|ON:thranda/ButtonAnnLt2[2]:0
+sw_item:WARN AUDIO [PF]|ON:thranda/ButtonAnnLt2[3]:0
+sw_item:Continue...
+sw_continue:BEFORE STARTING CHECKS 1
+
+sw_checklist:BEFORE STARTING CHECKS 1:BEFORE STARTING CHECKS 1
+sw_itemvoid_c:\orange\===== TEST PANEL =====
+sw_itemvoid_c:\orange\AUTOFEATHER TEST, once a day only with EXT PWR only
+sw_item:--- POWER LEVERS [PF]|GRD IDLE:sim/cockpit2/engine/actuators/throttle_ratio_all:<0.1
+sw_item:--- FUEL LEVERS [PF]|OPEN:(sim/flightmodel/engine/ENGN_mixt[0]:>0.7)&&(sim/flightmodel/engine/ENGN_mixt[1]:>0.7)
+sw_item:--- ERP [CP]|TO, GA or FLX:(thranda/electrical/EngineMode:1)||(thranda/electrical/EngineMode:2)||(thranda/electrical/EngineMode:3)
+sw_itemvoid_c:\orange\AUTOFEATHER TEST
+sw_item:--- AUTOFEATHER TEST buttons LH [PF]|DEPRESS:thranda/prop/lFeatherTest:1
+sw_itemvoid_c:\white\--- - Torque remains 0%
+sw_itemvoid_c:\white\--- - AF/APR ARMED and STBY lights on
+sw_item:--- LH AUTOFEATHER TEST button [PF]|RELEASE:thranda/prop/lFeatherTest:0
+sw_itemvoid_c:\white\--- - Torque remains 0%
+sw_itemvoid_c:\white\--- - LH ENG OUT alert on
+sw_itemvoid_c:\white\--- - AF/APR ARMED and STBY lights go out
+sw_itemvoid_c:\white\--- - LH FEATHER PUMP light on
+sw_itemvoid_c:\white\--- - RH engine torque increases to 10%
+sw_item:--- RH AUTOFEATHER TEST button [PF]|DEPRESS:thranda/prop/rFeatherTest:1
+sw_itemvoid_c:\white\--- - repeat above procedure for RH engine
+sw_item:--- RH AUTOFEATHER TEST button [PF]|RELEASE:thranda/prop/rFeatherTest:0
+sw_itemvoid_c:\white\--- - repeat above procedure for RH engine
+sw_item:--- FUEL LEVERS [PF]|SHUT:(sim/flightmodel/engine/ENGN_mixt[0]:>0.01)&&(sim/flightmodel/engine/ENGN_mixt[1]:>0.01)
+sw_itemvoid_c:\orange\ALERT SYS TEST, once a day only with EXT PWR only
+sw_itemvoid_c:\white\--- - Depress TEST button
+sw_itemvoid_c:\white\--- - Check TEST light on
+sw_itemvoid_c:\white\--- - At single chime check CMPL light on
+sw_itemvoid_c:\white\--- - Depress TEST button to acknowledge
+sw_itemvoid_c:\orange\SMOKE TEST, once a day only with EXT PWR only
+sw_itemvoid_c:\white\--- - Depress SMOKE TEST button
+sw_itemvoid_c:\white\--- - Check SMK lights on CAP on
+sw_itemvoid_c:\orange\SKID CTL TEST
+sw_itemvoid_c:\white\--- - Towing switch OFF
+sw_itemvoid_c:\white\--- - Depress TEST button
+sw_itemvoid_c:\white\--- - Check INBD and OUTBD lights on
+sw_itemvoid_c:\white\--- - Release TEST button
+sw_itemvoid_c:\white\--- - Check INBD and OUTBD lights out
+sw_item:Continue...
+sw_continue:BEFORE STARTING CHECKS 2
+
+sw_checklist:BEFORE STARTING CHECKS 2:BEFORE STARTING CHECKS 2
+sw_item:FUEL TOT [CP]|CHECKED:sim/cockpit2/fuel/fuel_totalizer_init_kg:>0
+sw_itemvoid_c:\white\- Check fuel displayed
+sw_item:WINDOW HEAT [OP]|LO:(thranda/Rheo[73]:0)&&(thranda/ButtonAnnLt1:0)&&(thranda/ButtonAnnLt1:0)
+sw_itemvoid_c:\white\- Set to LO and turn on both sides
+sw_item:LANDING ALT [OP]|SET
+sw_item:SEAT BELT - NO SMOKING [OP]|ON - AUTO:(thranda/Switch[16]:2)&&(thranda/Rheo[68]:0)
+sw_item:NAV/COMP/FMP [RP,GS]|SET
+sw_itemvoid_c:\white\- Set navigation, communication equipment and radar
+sw_itemvoid_c:\white\- Select AP COMMAND to the L or R FD
+sw_itemvoid_c:\white\- Set course, heading and altitude as required for departure
+sw_item:TO DATA|PREPARED
+sw_itemvoid_c:\white\- Check weight-and-balance sheet and insert TOW in weight indicator
+sw_itemvoid_c:\white\- prepare take-off data chart
+sw_itemvoid_c:\white\- Set speed bugs
+sw_itemvoid_c:\white\- Perform take-off briefing
+sw_item:ERP [CP]|SET TO:thranda/electrical/EngineMode:1
+sw_itemvoid_c:\white\- Select TO
+sw_item:TRIMS [PF]|SET:(thranda/anim/elevTrim>-1.01)&&(thranda/anim/elevTrim<0.28)
+sw_itemvoid_c:\white\- Set elevator trim within green band
+sw_itemvoid_c:\white\- Set rudder trim zero
+sw_itemvoid_c:\white\- Set aileron trim zero
+sw_itemvoid_c:\white\- Check controls to be plausible
+sw_item:PARKING BRAKE [LS]|SET:sim/flightmodel/controls/parkbrake:1
+sw_itemvoid_c:\white\- Check brake pressure
+sw_itemvoid_c:\white\- Switch HYDRAULIC ELECTRIC PUMP if needed
+sw_item:HYDRAULICS [OP]|CHECKED:(thranda/Rheo[81]:<0)&&(sim/cockpit/misc/hydraulic_quantity:>.70)
+sw_itemvoid_c:\white\- Check QTY minimum 70 percent
+sw_itemvoid_c:\white\- Check ELEC PUMP off
+sw_item:GEAR PINS|ON BOARD:1:
+sw_item:WINDOWS AND DOORS (Control Panel)|CLOSED:(sim/cockpit2/switches/door_open[0]:0)&&(sim/cockpit2/switches/door_open[1]:0)&&(sim/cockpit2/switches/door_open[2]:0)&&(sim/cockpit2/switches/door_open[3]:0)
+sw_item:STATIC ELEMENTS (Control Panel)|REMOVED:thranda/views/staticelements:0
+sw_item:PEDALS, SEAT, HARNESS|ADJUSTED:1:
+sw_item:Continue...
+sw_continue:CLEARED FOR START
+
+sw_checklist:CLEARED FOR START:CLEARED FOR START
+sw_item:FUEL PUMPS [OP]|ALL ON:(thranda/ButtonAnnLt1[47]:0)&&(thranda/ButtonAnnLt1[48]:0)&&(thranda/ButtonAnnLt1[49]:0)&&(thranda/ButtonAnnLt1[50]:0)
+sw_itemvoid:- Check PUMP lights out, for battery start pump 2 only
+sw_item:FUEL X-FEED [OP]|OFF:thranda/ButtonAnnLt2[45]:0
+sw_item:ANTI COLL LIGHT [OP]|ON:thranda/ButtonAnnLt1[94]:0
+sw_item:IGNITION [OP]|ON:(thranda/ButtonAnnLt2[81]:1)&&(thranda/ButtonAnnLt1[82]:1)
+sw_item:START P/B [OP]|ON:thranda/ButtonAnnLt2[81]:1
+sw_item:POWER LEVERS [PF]|GRD IDLE:(sim/cockpit2/engine/actuators/throttle_ratio[0]:0)&&(sim/cockpit2/engine/actuators/throttle_ratio[1]:0)
+sw_item:FUEL LEVERS [PF]|SHUT-OFF:(sim/cockpit2/engine/actuators/mixture_ratio[0]:0.0)&&(sim/cockpit2/engine/actuators/mixture_ratio[1]:0.0)
+sw_itemvoid_c:\orange\===== START L ENGINE =====
+sw_item:--- ENGINE SELECTOR [OP]|L (HOLD 3 SECs):thranda/Rheo[75]:<0
+sw_item:--- FUEL LEVER L [PF]|START:sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.23
+sw_itemvoid:
+sw_itemvoid:--- On passing 20 per cent NH:
+sw_itemvoid:--- Monitor engine acceleration and ITT
+sw_itemvoid:
+sw_itemvoid:--- When NH in green band:
+sw_item:--- FUEL LEVER L [PF]|OPEN:sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.70
+sw_item:--- START P/B [OP]|SWITCH OFF:thranda/ButtonAnnLt2[81]:0
+sw_item:--- OIL PRESSURE [CP]|CHECK ABOVE 40 PSI:sim/cockpit2/engine/indicators/oil_pressure_psi[0]:>0.4
+sw_itemvoid:
+sw_item:LEFT ENGINE GENERATOR [OP]|ON:thranda/ButtonAnnLt2[69]:0
+sw_item:EXT POWER [OP]|OFF:thranda/electrical/ExtPwrGPUSw:0
+sw_item:GPU (Control Panel)|REMOVED:sim/cockpit/electrical/gpu_on:0
+sw_itemvoid_c:\white\- Check EXT PWR light out
+sw_itemvoid_c:\white\- Use Carenado C menu to remove ground power
+sw_itemvoid:
+sw_itemvoid_c:\orange\===== START R ENGINE =====
+sw_item:--- ENGINE SELECTOR [OP]|R (HOLD 3 SECs):thranda/Rheo[75]:>0
+sw_itemvoid:
+sw_itemvoid:--- On passing 20 per cent NH:
+sw_item:--- FUEL LEVER R [PF]|START:sim/cockpit2/engine/actuators/mixture_ratio[1]:>0.23
+sw_itemvoid:--- Monitor engine acceleration and ITT
+sw_itemvoid:
+sw_itemvoid:--- When NH in green band:
+sw_item:--- FUEL LEVER R [PF]|OPEN:sim/cockpit2/engine/actuators/mixture_ratio[1]:>0.70
+sw_item:--- OIL PRESSURE [CP]|CHECK ABOVE 40 PSI:sim/cockpit2/engine/indicators/oil_pressure_psi[1]:>0.4
+sw_itemvoid:
+sw_item:Continue
+sw_continue:AFTER START CHECK
+
+sw_checklist:AFTER START CHECK:AFTER START CHECK
+sw_item:START P/B [OP]|OFF:thranda/ButtonAnnLt2[81]:0
+sw_item:IGNITION [OP]|OFF:(thranda/ButtonAnnLt2[81]:0)&&(thranda/ButtonAnnLt1[82]:0)
+sw_item:PACKS [OP]|ON:(thranda/ButtonAnnLt2[54]:0)&&(thranda/ButtonAnnLt2[51]:0)
+sw_item:BLEEDS [OP]|ON:(thranda/ButtonAnnLt2[55]:0)&&(thranda/ButtonAnnLt2[57]:0)
+sw_item:BATTERY CHARGERS [OP]|ON:(thranda/ButtonAnnLt2[63]:0)&&(thranda/ButtonAnnLt2[64]:0)
+sw_item:ANTI-ICING [OP]|SET:(thranda/Rheo[73]:0)&&(thranda/ButtonAnnLt1[83]:0)&&(thranda/ButtonAnnLt1[84]:0)&&(thranda/ButtonAnnLt1[85]:0)&&(thranda/ButtonAnnLt1[86]:0)&&(thranda/ButtonAnnLt1[87]:0)&&(thranda/Rheo[76]:0)
+sw_itemvoid_c:\white\:- Select ENGINE ANTI-ICING as required, lights ON
+sw_itemvoid_c:\white\:- Switch PITOT and VANE heating ON, INOP lights out
+sw_itemvoid_c:\white\:- Check AIRFRAME DE-ICING OFF
+sw_itemvoid_c:\white\:- Check WINDOW HEAT LOW
+sw_item:WINDOW HEAT [OP]|LO:(thranda/Rheo[73]:0)&&(thranda/ButtonAnnLt1:0)&&(thranda/ButtonAnnLt1:0)
+sw_itemvoid_c:\white\- Set to LO and turn on both sides
+sw_item:PROBE HEAT [OP]|ON:(thranda/ButtonAnnLt2[83]:0)&&(thranda/ButtonAnnLt2[84]:0)&&(thranda/ButtonAnnLt2[85]:0)&&(thranda/ButtonAnnLt2[86]:0)&&(thranda/ButtonAnnLt2[87]:0)
+sw_item:ALERT LIGHTS [CP]|OUT
+sw_itemvoid_c:\white\- Check all CAP lights out
+sw_itemvoid_c:\white\- Scan overhead panel and check all amber and white lights
+sw_item:PROP OVERSPEED [PF]|TESTED:thranda/Button[133]:>0
+sw_item:FLAPS [PF]|SET FOR TAKEOFF:sim/cockpit2/controls/flap_ratio:>0
+sw_item:FLIGHT INSTRUMENTS|CHECKED
+sw_itemvoid_c:\white\- EFIS, check heading
+sw_itemvoid_c:\white\- RMI, compare heading, select pointers
+sw_itemvoid_c:\white\- Altimeters set and compare
+sw_itemvoid_c:\white\- VSI, approx zero
+sw_itemvoid_c:\white\- Standby horizon, erect if required
+sw_itemvoid_c:\white\- Clock, set elapsed time
+sw_itemvoid:
+sw_item:Continue...
+sw_continue:BEFORE TAKE-OFF CHECK
+
+sw_checklist:BEFORE TAKE-OFF CHECK:BEFORE TAKE-OFF CHECK
+sw_item:TO DATA AND BRIEFING|COMPLETED
+sw_itemvoid_c:\white\- Verify takeoff speeds
+sw_itemvoid_c:\white\- Review departure procedure
+sw_item:FD [GS]|ON:sim/cockpit2/autopilot/flight_director_mode:>0
+sw_item:AFCS HDG, ASEL, VS [GS]|ARMED:(thranda/ButtonAnnLt2[139]:1)&&(sim/cockpit2/autopilot/altitude_hold_armed:1)&&(sim/cockpit2/autopilot/altitude_mode:4)
+sw_itemvoid_c:\white\- Set initial VS (typical 1500-2000)
+sw_item:RADAR and TRANSPONDER [PR]|SET:(sim/cockpit2/radios/actuators/transponder_mode:>3)&&(thranda/Rheo[34]:>180
+sw_itemvoid_c:\orange\===== CLEARED FOR LINE UP =====
+sw_item:STROBE LIGHTS [OP]|ON:sim/cockpit2/switches/strobe_lights_on:1
+sw_item:RADAR & TCAS [PR]|SET TA/RA:sim/cockpit2/radios/actuators/transponder_mode:>=2
+sw_item:LANDING LIGHTS [OP]|ON:(sim/cockpit2/switches/landing_lights_switch[2]:>0)&&(sim/cockpit2/switches/landing_lights_switch[1]:>0)
+sw_item:FLIGHT CONTROLS LOCK [PR]|OFF:thranda/cockpit/GustLock:0
+sw_item:FLIGHT CONTROLS|CHECKED
+sw_item:GROUND IDLE STOP [PF]|ON:thranda/cockpit/ThrottleLatch_0:1
+sw_item:TO CONF|CHECKED:thranda/Button[179]:>0
+sw_itemvoid_c:\white\- Depress TO CONF button and check absence of warning
+sw_item:THROTTLE [PF]|T/O DETENT:sim/cockpit2/engine/actuators/throttle_ratio_all:>0.7
+sw_continue:AFTER TAKE-OFF CHECK
+
+sw_checklist:AFTER TAKE-OFF CHECK:AFTER TAKE-OFF CHECK
+sw_item:GEAR [PF]|UP:sim/cockpit2/controls/gear_handle_down:0
+sw_item:TAXI LIGHT [OP]|OFF:sim/cockpit2/switches/taxi_light_on:0
+sw_item:FLAPS [PF]|UP:sim/cockpit2/controls/flap_ratio:0.0
+sw_item:YD [PR]|ON:sim/cockpit/switches/yaw_damper_on:1
+sw_item:ABOVE 1000FT AGL|ENGAGE AP:sim/cockpit/autopilot/autopilot_mode:>=2
+sw_item:APPROPRIATE LNAV MODE|ENGAGE:1:1
+sw_continue:CLIMB
+
+sw_checklist:CLIMB:CLIMB
+sw_item:ERP MODE [CP]|CLIMB:thranda/electrical/EngineMode:4
+sw_itemvoid_c:\white\- Accelerate to CLIMB speed 
+sw_item:IAS MODE [GS]|ACTIVATE:sim/cockpit2/autopilot/altitude_mode:5
+sw_item:LANDING LIGHTS [OP]|OFF:(sim/cockpit2/switches/landing_lights_switch[2]:0)&&(sim/cockpit2/switches/landing_lights_switch[1]:0)
+sw_item:SEATBELTS [OP]|OFF:sim/cockpit2/switches/fasten_seat_belts:0
+sw_item:CABIN PRESSURE|CHECKED:1:1
+sw_item:ALTIMETERS [GS]|SET 29.92:sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot:29.916|29.94
+sw_itemvoid_c:\white\- At transition altitude 1013/29.92
+sw_itemvoid_c:\white\- Crosscheck altimeters
+sw_item:RADAR [PR]|SET TO WEATHER:1:1
+sw_item:WHen at cruise altitude, set CRUISE speed from tables
+sw_item:Accelerate to and maintain CRUISE speed
+sw_item:EPR [CP]|CRZ:thranda/electrical/EngineMode:5
+sw_continue:BEFORE APPROACH CHECK
+
+sw_checklist:BEFORE APPROACH CHECK:BEFORE APPROACH CHECK
+sw_item:LANDING DATA/APPROACH BRIEFING|COMPLETED
+sw_itemvoid_c:\white\- Perform approach briefing
+sw_itemvoid_c:\white\- Review approach/missed approach procedure
+sw_itemvoid_c:\white\- Check MSA, MDA/DH and field elevation
+sw_itemvoid_c:\white\- Check landing weight, set speed bugs
+sw_itemvoid_c:\white\- ILS frequency and CRS SET if ILS approach
+sw_itemvoid_c:\white\- Set mode HDG; then set CRS; back to mode FMS
+sw_item:ALTIMETERS [GS]|SET
+sw_itemvoid_c:\white\- When passing transition level set altimeter
+sw_itemvoid_c:\white\- Crosscheck altimeters
+sw_item:Set NAV source (eg ILS NAV1)
+sw_itemvoid_c:\white\MAX Flap ext speeds
+sw_itemvoid_c:\white\-   5 - 180 KIAS
+sw_itemvoid_c:\white\-  10 - 180 KIAS
+sw_itemvoid_c:\white\-  15 - 180 KIAS
+sw_itemvoid_c:\white\-  20 - 160 KIAS
+sw_itemvoid_c:\white\-  25 - 160 KIAS
+sw_itemvoid_c:\white\-  35 - 140 KIAS 
+sw_continue:BEFORE LANDING CHECKS
+
+sw_checklist:BEFORE LANDING CHECKS:BEFORE LANDING CHECKS
+sw_item:LANDING GEAR [CP]|DOWN:kp/xsp/systems/gear_status:1
+sw_item:TAXI LIGHTS [OP]|ON:sim/cockpit2/switches/taxi_light_on:1
+sw_item:LANDING LIGHTS [OP]|ON:(thranda/Switch[19]:1)
+sw_item:FLAPS [PF]|SET FOR LANDING:sim/cockpit2/controls/flap_ratio:>0.8
+sw_item:ERP [CP]|GA:thranda/electrical/EngineMode:2
+sw_item:GROUND IDLE STOP [PF]|OFF:thranda/cockpit/ThrottleLatch_0:0
+sw_item:A/F APR on:thranda/ButtonAnnLt1[120]:1
+sw_item:YD [PR]|OFF:sim/cockpit/switches/yaw_damper_on:0
+sw_item:ON BREAKING COMPLETE, A/F APR|OFF:thranda/ButtonAnnLt1[120]:0
+sw_continue:AFTER LANDING
+
+sw_checklist:AFTER LANDING:AFTER LANDING
+sw_item:FLAPS [PF]|UP:sim/cockpit2/controls/flap_ratio:0
+sw_item:LANDING LIGHTS [OP]|OFF:(sim/cockpit2/switches/landing_lights_switch[2]:0)&&(sim/cockpit2/switches/landing_lights_switch[1]:0)
+sw_item:STROBE LIGHTS [OP]|OFF:sim/cockpit2/switches/strobe_lights_on:0
+sw_item:RADAR & TCAS [PR]|SET OFF:sim/cockpit2/radios/actuators/transponder_mode:<2
+sw_item:Taxi to gate
+sw_continue:AFTER PARKING CHECK
+
+sw_checklist:AFTER PARKING CHECK:AFTER PARKING CHECK
+sw_item:POWER LEVERS [PF]|GRD IDLE:sim/cockpit2/engine/actuators/throttle_ratio_all:<0.1
+sw_item:PARKING BRAKE [PF]|SET:sim/cockpit2/controls/parking_brake_ratio:1
+sw_item:GPU|CONNECTED:sim/cockpit/electrical/gpu_on:1
+sw_itemvoid_c:\white\- Use Carenado C menu to activate ground power
+sw_item:EXT POWER [OP]|ON:thranda/electrical/ExtPwrGPUSw:1
+sw_item:ERP [CP]|TO:thranda/electrical/EngineMode:1
+sw_item:FUEL LEVERS [PF]|SHUT:(sim/flightmodel/engine/ENGN_mixt[0]:0)&&(sim/flightmodel/engine/ENGN_mixt[1]:0)
+sw_itemvoid_c:\white\- Hold START until torque indication drops to 0%
+sw_itemvoid_c:\white\- Note A/C weight and fuel used
+sw_item:STATIC ELEMENTS (Control Panel)|SET:thranda/views/staticelements:1
+sw_item:FUEL PUMPS [OP]|OFF:(thranda/ButtonAnnLt1[47]:1)&&(thranda/ButtonAnnLt1[48]:1)&&(thranda/ButtonAnnLt1[49]:1)&&(thranda/ButtonAnnLt1[50]:1)
+sw_item:ANTI-ICING [OP]|OFF:(thranda/Rheo[73]:!0)&&(thranda/ButtonAnnLt1[83]:1)&&(thranda/ButtonAnnLt1[84]:1)&&(thranda/ButtonAnnLt1[85]:1)&&(thranda/ButtonAnnLt1[86]:1)&&(thranda/ButtonAnnLt1[87]:1)&&(thranda/Rheo[76]:0)
+sw_itemvoid_c:- WINDOW HEAT|OFF
+sw_itemvoid_c:- PROBE HEAT|OFF
+sw_itemvoid_c:- ENGINE ANTI-ICING|OFF
+sw_itemvoid_c:- AIRFRAME DE-ICING|OFF
+sw_item:ANTI COLL LIGHT [OP]|OFF::thranda/ButtonAnnLt1[94]:1
+sw_item:SEAT BELT [OP]|OFF:(thranda/Switch[16]:0)&&(thranda/Rheo[68]:1)
+sw_item:LANDING/STROBE LIGHTS [OP]|OFF:(thranda/Switch[19]:0)
+sw_item:RADAR AND TRANSPONDER [PR]|STBY:(sim/cockpit2/radios/actuators/transponder_mode:0)&&(thranda/Rheo[34]:0
+sw_item:FLIGHT CONTROLS LOCK [PR]|ON:thranda/cockpit/GustLock:1
+sw_itemvoid_c:\orange\===== FINAL STOP =====
+sw_item:EFIS [GS]|OFF
+sw_itemvoid_c:\white\- Switch PFD and ND brightness OFF
+sw_item:DOORS (Control Panel)|OPEN:(sim/cockpit2/switches/door_open[0]:5)||(sim/cockpit2/switches/door_open[1]:5)||(sim/cockpit2/switches/door_open[2]:5)||(sim/cockpit2/switches/door_open[3]:5)
+sw_item:EMER LIGHT|OFF:thranda/lights/EmergencyLights:0
+sw_item:BATTERIES [OP]|OFF::sim/cockpit/electrical/battery_on:0
+sw_item:OXYGEN|OFF

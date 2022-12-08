@@ -1,0 +1,1 @@
+Add the xlua folder in the plugins subfolder of the aircraft

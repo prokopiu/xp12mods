@@ -5,7 +5,8 @@ In the case of payware it is your decision if you want to mod it, I will give NO
 
 The files go into the folder of each scenery as you see them here.
 
-- Justsim EDDV 1.0: Fixed lights and ground for winter snow
-- Justsim EDDH 1.1: Fixed lights and ground for winter snow
-- Justsim EDDC 1.1: Fixed lights and ground for winter snow
+- Justsim EDDV 1.0: Fixed lights and ground for winter snow and rain effects
+- Justsim EDDH 1.1: Fixed lights and ground for winter snow and rain effects
+- Justsim EDDC 1.1: Fixed lights and ground for winter snow and rain effects
 - Justsim EDDL 2.0: Fixed lights, ground was ok
+- Digital Design EDDP 1.4: Fixed lights and ground for winter snow and rain effects

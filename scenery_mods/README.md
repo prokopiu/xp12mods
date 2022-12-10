@@ -10,3 +10,4 @@ The files go into the folder of each scenery as you see them here.
 - Justsim EDDC 1.1: Fixed lights and ground for winter snow and rain effects
 - Justsim EDDL 2.0: Fixed lights, ground was ok
 - Digital Design EDDP 1.4: Fixed lights and ground for winter snow and rain effects
+- Aerosoft EDFH 1.0: Fixed lights but had to leave the ground textures - snow will cover everything

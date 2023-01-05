@@ -6,3 +6,5 @@ In the case of payware it is your decision if you want to mod it, I will give NO
 The files go into the folder of each addon as you see them here.
 
 - Carenado F50 1.1 fixes that airplane to work properly in XP12 (and XP11 btw)
+- SSG_B748_Series contains a new livery I didi not find anywhere else. Challenge Airlines Cargo
+- EMB110-V3 fixes the totaly inadequate cockpit lighting in the Dreamfoil EMB-110

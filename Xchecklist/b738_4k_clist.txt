@@ -7,10 +7,10 @@ sw_define_colour:yellow:1.0,1.0,0.0
 sw_define_colour:white:0.9,0.9,0.9
 sw_define_colour:grey:0.6,0.6,0.6
 ########
-sw_checklist: V1.0 BY PROKOPIU, 07.2022
+sw_checklist: V1.0 BY PROKOPIU, 01.2023
 ########
 sw_itemvoid_c:\white\                   KPCREW 2.3 COMPATIBLE 737-800 CHECKLIST
-sw_itemvoid_c:\grey\                                      FOR ZIBO V3.51+
+sw_itemvoid_c:\grey\                                      FOR ZIBO V3.54+
 sw_itemvoid_c:\grey\                       INSPIRED ALSO BY VIN_KAIZEN'S CLIST
 sw_itemvoid:::::::::::::::::::::::::::::::::::::::: TECHNICAL DATA ::::::::::::::::::::::::::::::::::::::
 sw_itemvoid_c:\white\ENGINES:                      \grey\CFM56-7B24        \white\AIRCRAFT LENGHT:      \grey\39,5m
@@ -112,7 +112,7 @@ sw_checklist:PREL PREFLIGHT PROCEDURE (F/O):PREL PREFLIGHT PROCEDURE
 #########
 sw_item_c:\white\EMERGENCY EXIT LIGHTS\grey\, AREMD & GUARDED|SET:(laminar/B738/toggle_switch/emer_exit_lights:1.0)&&(laminar/B738/button_switch/cover_position[9]:0)
 sw_item_c:\white\ATTENDENCE BUTTON|PRESS:laminar/B738/push_button/attend_pos:>0
-sw_item_c:\white\ELECTRICAL POWER UP|COMPLETE:(laminar/B738/electric/dc_gnd_service:>0)||((laminar/B738/electric/dc_gnd_service:0)&&((laminar/B738/electrical/apu_power_bus1:1)||(laminar/B738/electrical/apu_power_bus2:1)))
+sw_item_c:\white\ELECTRICAL POWER UP|COMPLETE:(sim/cockpit/electrical/gpu_on:1)||(laminar/B738/electrical/apu_power_bus1:1)||(laminar/B738/electrical/apu_power_bus2:1)
 sw_item_c:\white\VOICE RECORDER SWITCH\grey\, AUTO|SET:(laminar/B738/toggle_switch/vcr:0)&&(laminar/B738/switches/fdr_cover_pos:0)
 sw_item_c:\white\MACH OVERSPEED TEST|PERFORM:(laminar/B738/push_button/mach_warn1_pos:1)||(laminar/B738/push_button/mach_warn2_pos:1)
 sw_item_c:\white\STALL WARNING TEST|PERFORM:(laminar/B738/push_button/stall_test1:1)||(laminar/B738/push_button/stall_test2:1)
@@ -252,17 +252,17 @@ sw_item_c:\white\LEFT & RIGHT RECIRC FANS\grey\, AUTO|CHECKED:(laminar/B738/air/
 sw_item_c:\white\LEFT & RIGHT AIR CONDITIONING PACK\grey\, AUTO|SET:(laminar/B738/air/l_pack_pos:>0)&&(laminar/B738/air/r_pack_pos:>0)
 sw_item_c:\white\ISOLATION VALVE SWITCH\grey\, AUTO OR OPEN|CHECKED:laminar/B738/air/isolation_valve_pos:>0
 sw_item_c:\white\ENGINE BLEED AIR 1 & 2\grey\, ON|CHECKED:(laminar/B738/toggle_switch/bleed_air_1_pos:1)&&(laminar/B738/toggle_switch/bleed_air_2_pos:1)&&(sim/operation/failures/rel_bleed_air_lft:0)&&(sim/operation/failures/rel_bleed_air_rgt:0)
-sw_item_c:\white\APU BLEED\grey\, OFF (ON IF APU IS RUNNING)|CHECKED:(laminar/B738/toggle_switch/bleed_air_apu_pos:0)||(sim/cockpit/engine/APU_running:1)&&(laminar/B738/toggle_switch/bleed_air_apu_pos:1)
+sw_item_c:\white\APU BLEED\grey\, OFF (ON IF APU IS RUNNING)|CHECKED:((sim/cockpit/engine/APU_running:0)&&(laminar/B738/toggle_switch/bleed_air_apu_pos:0))||((sim/cockpit/engine/APU_running:1)&&(laminar/B738/toggle_switch/bleed_air_apu_pos:1))
 sw_itemvoid:::::::::::::::: Cabin pressurization panel ::
 sw_item_c:\white\FLIGHT ALTITUDE INDICATOR\grey\, CRUISE ALTITUDE|SET:sim/cockpit/pressure/max_allowable_altitude:{laminar/B738/autopilot/fmc_cruise_alt}
-sw_item_c:\white\LANDING ALTITUDE INDICATOR\grey\, RWY ELEVATION|SET:laminar/B738/pressurization/knobs/landing_alt:{laminar/B738/pfd/des_rwy_altitude}-25|{laminar/B738/pfd/des_rwy_altitude}+25
+sw_item_c:\white\LANDING ALTITUDE INDICATOR\grey\, RWY ELEVATION|SET:laminar/B738/pressurization/knobs/landing_alt:{laminar/B738/pfd/ref_rwy_altitude}-25|{laminar/B738/pfd/ref_rwy_altitude}+25
 sw_itemvoid_c:\grey\(ROUND RWY ELEVATION TO NEAREST +-50 FT)
 sw_item_c:\white\PRESSURIZATION MODE SELECTOR\grey\, AUTO|SET:laminar/B738/toggle_switch/air_valve_ctrl:0
 sw_itemvoid:::::::::::::::: Lighting panel ::
 sw_item_c:\white\LEFT & RIGHT LANDING LIGHTS\grey\, OFF|CHECKED:(sim/operation/failures/rel_lites_land:0)&&(laminar/B738/led_lights:1)&&(laminar/B738/switch/land_lights_left_pos:0)&&(laminar/B738/switch/land_lights_right_pos:0)||(sim/operation/failures/rel_lites_land:0)&&(laminar/B738/led_lights:0)&&(laminar/B738/switch/land_lights_left_pos:0)&&(laminar/B738/switch/land_lights_right_pos:0)&&(laminar/B738/switch/land_lights_ret_left_pos:0)&&(laminar/B738/switch/land_lights_ret_right_pos:0)
 sw_item_c:\white\LEFT & RIGHT RUNWAY TURNOFF LIGHTS\grey\, OFF|CHECKED:(sim/cockpit2/switches/generic_lights_switch[2]:0)&&(sim/cockpit2/switches/generic_lights_switch[3]:0)
 sw_item_c:\white\TAXI LIGHT\grey\, OFF|CHECKED:laminar/B738/toggle_switch/taxi_light_brightness_pos:0
-sw_item_c:\white\LOGO LIGHT\grey\, ON (IN DARKNESS)|AS NEEDED
+sw_item_c:\white\LOGO LIGHT\grey\, ON (IN DARKNESS)|AS NEEDED:((sim/private/stats/skyc/sun_amb_b:<0.02)&&(laminar/B738/toggle_switch/logo_light:1))||((sim/private/stats/skyc/sun_amb_b:>0.02)&&(laminar/B738/toggle_switch/logo_light:0))
 sw_item_c:\white\POSITION LIGHTS\grey\, STEADY|CHECKED:(sim/cockpit2/switches/navigation_lights_on:1)&&(sim/cockpit2/switches/strobe_lights_on:0)&&(sim/operation/failures/rel_lites_nav:0)
 sw_item_c:\white\ANTI COLLISION LIGHT\grey\, OFF|CHECKED:sim/cockpit/electrical/beacon_lights_on:0
 sw_item_c:\white\WING LIGHT\grey\, OFF|CHECKED:sim/cockpit2/switches/generic_lights_switch[0]:0
@@ -347,8 +347,7 @@ sw_item_c:\white\STANDBY ALTIMETER\grey\, LOCAL QNH|SET:laminar/B738/gauges/stan
 sw_item_c:\white\STANDBY RMI\grey\, ADF / VOR (RAWDATA BACKUP)|AS NEEDED:(sim/cockpit/switches/RMI_l_vor_adf_selector:><0)||(sim/cockpit/switches/RMI_r_vor_adf_selector:><0)||(laminar/B738/autobrake/autobrake_pos:><0)||(laminar/B738/autobrake/autobrake_pos:0)
 sw_itemvoid:::::::::::::::: Console panel ::
 sw_item_c:\white\SPEEDBRAKE LEVER\grey\, DOWN (RETRACT)|SET:sim/cockpit2/controls/speedbrake_ratio:0
-sw_item_c:\white\REVERSE LEVERS\grey\, IDLE <60 KNOTS|DONE:(laminar/B738/flt_ctrls/reverse_lever12:>0)&&(laminar/B738/flt_ctrls/reverse_lever12:<0.2)&&(laminar/b738/fmodpack/real_groundspeed:<60)
-sw_item_c:\white\REVERSE LEVERS\grey\, CLOSED <30 KNOTS|DONE:(laminar/B738/flt_ctrls/reverse_lever12:0)&&(laminar/b738/fmodpack/real_groundspeed:<30)
+sw_item_c:\white\REVERSE LEVERS\grey\, CLOSED|DONE:laminar/B738/flt_ctrls/reverse_lever12:0
 sw_item_c:\white\FORWARD THRUST LEVERS\grey\, CLOSED (IDLE)|SET:laminar/B738/engine/thrust12_leveler:0
 sw_item_c:\white\FLAP LEVER\grey\, UP & DETENT|CHECKED:sim/cockpit2/controls/flap_ratio:0
 sw_item_c:\white\FLAP INDICATOR\grey\, CORRESPONDS FLAP LEVER POSITION|CHECKED
@@ -394,7 +393,7 @@ sw_item_c:\white\START CLEARANCE|OBTAIN
 sw_itemvoid_c:\grey\  Obtain a clearance to pressurize hydraulic systems.
 sw_itemvoid_c:\grey\  Obtain a clearance to start engines.
 sw_itemvoid:::::::::::::::: Set Fuel Panel ::
-sw_item_c:\white\CENTER FUEL PUMPS SWITCHES|ON:((laminar/B738/fuel/center_tank_lbs:>1000)&&(laminar/B738/fuel/fuel_tank_pos_ctr1:1)&&(laminar/B738/fuel/fuel_tank_pos_ctr2:1))&&((laminar/B738/fuel/center_tank_lbs:<1001)&&(laminar/B738/fuel/fuel_tank_pos_ctr1:0)&&(laminar/B738/fuel/fuel_tank_pos_ctr2:0))
+sw_item_c:\white\CENTER FUEL PUMPS SWITCHES|AS NEEDED:((laminar/B738/fuel/center_tank_lbs:>1000)&&(laminar/B738/fuel/fuel_tank_pos_ctr1:1)&&(laminar/B738/fuel/fuel_tank_pos_ctr2:1))||((laminar/B738/fuel/center_tank_lbs:<1001)&&(laminar/B738/fuel/fuel_tank_pos_ctr1:0)&&(laminar/B738/fuel/fuel_tank_pos_ctr2:0))
 sw_itemvoid_c:\grey\  If center tank quantity exceeds 1,000 lbs/460 kgs
 sw_item_c:\white\AFT & FWD FUEL PUMPS 1\grey\, ON|SET:(laminar/B738/fuel/fuel_tank_pos_lft1:1)&&(laminar/B738/fuel/fuel_tank_pos_lft2:1)&&(sim/operation/failures/rel_ele_fuepmp0:0)&&(sim/operation/failures/rel_ele_fuepmp1:0)
 sw_item_c:\white\FWD & AFT FUEL PUMPS 2\grey\, ON|SET:(laminar/B738/fuel/fuel_tank_pos_rgt1:1)&&(laminar/B738/fuel/fuel_tank_pos_rgt2:1)&&(sim/operation/failures/rel_ele_fuepmp2:0)&&(sim/operation/failures/rel_ele_fuepmp4:0)
@@ -412,7 +411,7 @@ sw_checklist:BEFORE START CHECKLIST:BEFORE START CHECKLIST
 #########
 
 sw_item_c:\white\FLIGHT DECK DOOR|CLOSED AND LOCKED:laminar/B738/door/flt_dk_door_ratio:0
-sw_item_c:\white\FUEL|___ KGS, PUMPS ON:(laminar/B738/fuel/total_tank_kgs:>1000)&&(laminar/B738/fuel/fuel_tank_pos_lft1:1)&&(laminar/B738/fuel/fuel_tank_pos_lft2:1)&&(laminar/B738/fuel/fuel_tank_pos_lft3:1)&&(laminar/B738/fuel/fuel_tank_pos_lft4:1)
+sw_item_c:\white\FUEL|___ KGS, PUMPS ON:(laminar/B738/fuel/total_tank_kgs:>1000)&&(laminar/B738/fuel/fuel_tank_pos_lft1:1)&&(laminar/B738/fuel/fuel_tank_pos_lft2:1)&&(laminar/B738/fuel/fuel_tank_pos_rgt1:1)&&(laminar/B738/fuel/fuel_tank_pos_rgt2:1)
 sw_item_c:\white\PASSENGER SIGNS|ON:(laminar/B738/toggle_switch/seatbelt_sign_pos:2)&&(laminar/B738/toggle_switch/no_smoking_pos:2)
 sw_itemvoid_c:\white\WINDOWS|LOCKED
 sw_item_c:\white\MCP|V2____, HEADING____, ALTITUDE___:(laminar/B738/FMS/vr_set:>0)&&(sim/cockpit/autopilot/altitude:><4900)&&(laminar/B738/autopilot/mcp_hdg_dial:><0)

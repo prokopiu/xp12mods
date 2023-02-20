@@ -1,0 +1,2322 @@
+A
+1000
+ACF_SOUNDS
+
+
+BEGIN_SOUND_SPACE
+	SOUND_INDEX 0
+	BLEND_DEPTH 0.03
+        AABB -0.9 -0.5 -5.5 0.9 1.50 7
+END_SOUND_SPACE
+
+
+######################### Load Aircraft #################################
+BEGIN_SOUND_ATTACHMENT
+	SNAPSHOT_NAME /Start Silent
+	EVENT_START_COND sim/time/total_flight_time_sec > 0
+	EVENT_END_COND sim/time/total_flight_time_sec > 4
+END_SOUND_ATTACHMENT
+
+#-----------------------------
+# exterior processed bus
+#-----------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	SNAPSHOT_NAME /inside
+	EVENT_START_COND sim/operation/sound/inside_ratio[0] > 0.0
+	EVENT_END_COND sim/operation/sound/inside_ratio[0] == 0.0
+END_SOUND_ATTACHMENT
+
+
+
+
+#---------------------------
+# aircraft (ext processed)
+#---------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 1 in
+	VEH_PART engine 0
+	PARAM_DREF_IDX 0
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/cockpit2/engine/indicators/prop_speed_rpm[0] > 300
+	EVENT_END_COND sim/cockpit2/engine/indicators/prop_speed_rpm[0] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 2 in
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/cockpit2/engine/indicators/prop_speed_rpm[1] > 300
+	EVENT_END_COND sim/cockpit2/engine/indicators/prop_speed_rpm[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 1 front
+	VEH_PART engine 0
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 1 rear
+	VEH_PART engine 0
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 2 front
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop 2 rear
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop rasp
+	VEH_PART engine 0
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/prop rasp
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] > 0.05
+	EVENT_END_COND sim/flightmodel2/engines/engine_rotation_speed_rad_sec[1] < 0.05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/starter
+	VEH_PART engine 0
+	PARAM_DREF_IDX 0
+	EVENT_START_COND sim/flightmodel2/engines/starter_is_running[0] == 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /engine/starter
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_START_COND sim/flightmodel2/engines/starter_is_running[1] == 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /engine/engine shutdown
+    EVENT_START_COND        DELTA=sim/flightmodel2/engines/engine_is_burning_fuel[0] < 0
+    EVENT_END_COND          DELTA=sim/flightmodel2/engines/engine_is_burning_fuel[0] > 0
+    VEH_PART                engine 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /engine/engine shutdown
+    EVENT_START_COND        DELTA=sim/flightmodel2/engines/engine_is_burning_fuel[1] < 0
+    EVENT_END_COND          DELTA=sim/flightmodel2/engines/engine_is_burning_fuel[1] > 0
+    VEH_PART                engine 1
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /fuelpump
+	VEH_PART engine 0
+	PARAM_DREF_IDX 0
+	EVENT_START_COND sim/flightmodel2/engines/fuel_pump_spinning[0] == 1
+	EVENT_END_COND sim/flightmodel2/engines/fuel_pump_spinning[0] == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /fuelpump
+	VEH_PART engine 1
+	PARAM_DREF_IDX 1
+	EVENT_START_COND sim/flightmodel2/engines/fuel_pump_spinning[1] == 1
+	EVENT_END_COND sim/flightmodel2/engines/fuel_pump_spinning[1] == 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /flaps
+	VEH_XYZ 0 0.7 0.6
+	PARAM_DREF_IDX 0
+	EVENT_START_COND DELTA=sim/flightmodel2/controls/flap1_deploy_ratio > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/controls/flap1_deploy_ratio == 0
+	EVENT_END_COND ABS_DELTA=sim/flightmodel2/controls/flap1_deploy_ratio == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /flaps up
+	VEH_XYZ 0 0.7 0.6
+	PARAM_DREF_IDX 0
+	EVENT_START_COND DELTA=sim/flightmodel2/controls/flap1_deploy_ratio < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/controls/flap1_deploy_ratio == 0
+	EVENT_END_COND ABS_DELTA=sim/flightmodel2/controls/flap1_deploy_ratio == 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear down
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear up
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[0] > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear down
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear up
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[1] > 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear down
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /gear up
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_START_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/gear/deploy_ratio[2] > 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /Spray
+    EVENT_START_COND        sim/flightmodel/ground/surface_texture_type == 1
+    EVENT_START_COND        sim/flightmodel/forces/fnrml_gear != 0
+    EVENT_END_COND          sim/flightmodel/forces/fnrml_gear == 0
+    VEH_PART                cockpit 0
+    PARAM_DREF_IDX          1
+END_SOUND_ATTACHMENT
+
+#----------------------------
+# environment (ext processed)
+#----------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/wind
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/flightmodel/position/indicated_airspeed >= 1
+	EVENT_END_COND sim/flightmodel/position/indicated_airspeed < 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/wind
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/weather/precipitation_on_aircraft_ratio > 0
+	EVENT_END_COND sim/weather/precipitation_on_aircraft_ratio == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /road
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[0] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[0] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[0] != 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /road
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[1] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[1] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[1] != 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /road
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[2] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[2] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[2] != 1
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/rattle
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[0] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[0] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[0] != 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/rattle
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[1] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[1] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[1] != 1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/rattle
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_rotation_speed_rad_sec[2] > 1
+	EVENT_START_COND sim/flightmodel2/gear/on_ground[2] == 1
+	EVENT_END_COND sim/flightmodel2/gear/on_ground[2] != 1
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire contact
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/total_deflection_rate[0] > 1
+	EVENT_START_COND sim/flightmodel2/gear/tire_vertical_deflection_mtr[0] > 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire contact
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/total_deflection_rate[1] > 1
+	EVENT_START_COND sim/flightmodel2/gear/tire_vertical_deflection_mtr[1] > 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire contact
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/total_deflection_rate[2] > 1
+	EVENT_START_COND sim/flightmodel2/gear/tire_vertical_deflection_mtr[2] > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /skid
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_skid_ratio[0] > 0
+	EVENT_END_COND sim/flightmodel2/gear/tire_skid_ratio[0] == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /skid
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_skid_ratio[1] > 0
+	EVENT_END_COND sim/flightmodel2/gear/tire_skid_ratio[1] == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /skid
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_ALLOWED_FOR_AI
+	EVENT_START_COND sim/flightmodel2/gear/tire_skid_ratio[2] > 0
+	EVENT_END_COND sim/flightmodel2/gear/tire_skid_ratio[2] == 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire pop
+	VEH_PART tire 0
+	PARAM_DREF_IDX 0
+	EVENT_START_COND sim/operation/failures/rel_tire1 == 6
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire pop
+	VEH_PART tire 1
+	PARAM_DREF_IDX 1
+	EVENT_START_COND sim/operation/failures/rel_tire2 == 6
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /tire pop
+	VEH_PART tire 2
+	PARAM_DREF_IDX 2
+	EVENT_START_COND sim/operation/failures/rel_tire3 == 6
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /crashvne
+	VEH_PART cockpit 0
+	EVENT_START_COND 	DELTA=sim/flightmodel/failures/over_vne != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /flapsfail
+	VEH_PART cockpit 0
+	EVENT_START_COND 	DELTA=sim/flightmodel/failures/over_vfe != 0
+END_SOUND_ATTACHMENT
+
+
+
+#BEGIN_SOUND_ATTACHMENT
+#	EVENT_NAME /crash
+#	VEH_PART cockpit 0
+#	EVENT_START_COND 	DELTA=sim/flightmodel/failures/over_g != 0
+#END_SOUND_ATTACHMENT
+
+
+#BEGIN_SOUND_ATTACHMENT
+#    EVENT_NAME              /crash
+#    EVENT_START_COND        sim/flightmodel2/misc/has_crashed == 1
+#    EVENT_END_COND          sim/flightmodel2/misc/has_crashed == 0
+#    VEH_PART                cockpit 0
+#END_SOUND_ATTACHMENT
+#------------------------------
+# interior bus
+#------------------------------
+
+
+#-----------------------------
+# begin cockpit interactions 
+#-----------------------------
+
+
+
+#---brake---------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/brake back
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/cockpit2/controls/parking_brake_ratio > 0
+	##CUE_TRIGGER_COND DELTA=sim/cockpit2/controls/parking_brake_ratio == 1
+	EVENT_END_COND DELTA=sim/cockpit2/controls/parking_brake_ratio < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/brake forward
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/cockpit2/controls/parking_brake_ratio < 0
+	##CUE_TRIGGER_COND DELTA=sim/cockpit2/controls/parking_brake_ratio == 0
+	EVENT_END_COND DELTA=sim/cockpit2/controls/parking_brake_ratio > 0
+END_SOUND_ATTACHMENT
+
+
+
+
+#---toggles--------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/controls/nosewheel_steer_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/landing_lights_switch[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/landing_lights_switch[2] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/landing_lights_switch[3] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/taxi_light_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/electrical/beacon_lights_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/instrument_brightness_ratio[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/panel_brightness_ratio[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/strobe_lights_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/navigation_lights_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/switches/fasten_seat_belts != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/switches/no_smoking != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/panel_brightness_ratio[3] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/panel_brightness_ratio[2] != 0
+END_SOUND_ATTACHMENT
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/systems/feather_mode_arm
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/systems/feather_mode_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/systems/feather_mode_test
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/prop_sync_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/electric_hydraulic_pump_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/graphics/view/hide_yoke != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/engine/actuators/auto_ignite_on[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/starters/engage_starter_1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/starters/engage_starter_2
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/engine/actuators/auto_ignite_on[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/electrical/inverter_on[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/electrical/inverter_on[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[2] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[3] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[4] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[5] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[6] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[7] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[8] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch9] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[10] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[11] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[12] != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[13] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[14] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[15] != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[16] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[17] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/generic_lights_switch[18] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_nav1 != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_com1 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_nav2 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_com2 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_adf1 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_adf2 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_dme1 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/audio_selection_dme2 != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/switches/marker_panel_out != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/electrical/battery_on[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/electrical/battery_on[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/avionics_power_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_1_on
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_1_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_1_reset
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_2_on
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_2_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/generator_2_reset
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_prop_heat_on_per_engine[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_prop_heat_on_per_engine[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_surface_boot_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_window_heat_on != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/DME_slave_source != 0
+END_SOUND_ATTACHMENT
+
+
+#-------------------------
+# pilot side panel
+#-------------------------
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/instruments/timer_cycle
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/instruments/timer_mode
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/instruments/timer_start_stop
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/gauges/actuators/artificial_horizon_adjust_deg_pilot != 0
+	EVENT_END_COND ABS_DELTA=sim/cockpit2/gauges/actuators/artificial_horizon_adjust_deg_pilot == 0
+
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/ecam_mode != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/EFIS/ecam_mode[0] != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/flight_controls/ignite_jato
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/nav1_obs_deg_mag_pilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/radios/actuators/nav1_obs_deg_mag_pilot == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/adf1_card_heading_deg_mag_pilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/radios/actuators/adf1_card_heading_deg_mag_pilot == 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/autopilot/autopilot_source != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/alternate_static_air_ratio != 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/autopilot/heading_dial_deg_mag_pilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/autopilot/heading_dial_deg_mag_pilot == 0
+END_SOUND_ATTACHMENT
+
+
+#-------------------------
+# co-pilot side panel
+#-------------------------
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/gauges/actuators/artificial_horizon_adjust_deg_copilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/gauges/actuators/artificial_horizon_adjust_deg_copilot == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/gauges/actuators/barometer_setting_in_hg_copilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/gauges/actuators/barometer_setting_in_hg_copilot == 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/misc/radio_altimeter_minimum != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit/misc/radio_altimeter_minimum == 0
+END_SOUND_ATTACHMENT
+
+###***
+
+
+#BEGIN_SOUND_ATTACHMENT
+#	EVENT_NAME /interior/radio click
+#	VEH_PART cockpit 0
+#	EVENT_CMND_DOWN sim/radios/copilot_obs_HSI_up
+#END_SOUND_ATTACHMENT
+
+#BEGIN_SOUND_ATTACHMENT
+#	EVENT_NAME /interior/radio click
+#	VEH_PART cockpit 0
+#	EVENT_CMND_DOWN sim/radios/copilot_obs_HSI_down
+#END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/autopilot/heading_dial_deg_mag_copilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/autopilot/heading_dial_deg_mag_copilot == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/hsi_obs_deg_mag_copilot != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/radios/actuators/hsi_obs_deg_mag_copilot == 0
+END_SOUND_ATTACHMENT
+
+
+#---------------------------------
+# central stacks - radio buttons
+#---------------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/autopilot/altitude != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit/autopilot/altitude == 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/annunciator/marker_beacon_mute
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_com1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_com2
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_nav1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_nav2
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_dme
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/monitor_audio_adf1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/transmit_audio_com1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/audio_panel/transmit_audio_com2
+END_SOUND_ATTACHMENT
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_com_ff
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_zoom_out
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_zoom_in
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_nav_ff
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_direct
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_menu
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_clr
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_ent
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_nav_com_tog
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_cdi
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_obs
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_msg
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_fpl
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_vnav
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_proc
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n1_cursor
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_com_ff
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_nav_ff
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_zoom_out
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_zoom_in
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_menu
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_direct
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_clr
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_ent
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_nav_com_tog
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_cdi
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_obs
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_msg
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_fpl
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_proc
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/GPS/g430n2_cursor
+END_SOUND_ATTACHMENT
+
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/servos_toggle
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/heading
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/NAV
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/approach
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/back_course
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/altitude_hold
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/autopilot/vertical_speed
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/adf1_power != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/radios/adf1_standy_flip
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_ident
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/transponder_code != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_on
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_alt
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_standby
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_off
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_2
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_3
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_4
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_5
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_6
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/transponder/transponder_digit_7
+END_SOUND_ATTACHMENT
+
+
+
+#-------------------------------------
+# trim
+#-------------------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/flight_controls/pitch_trim_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/flight_controls/pitch_trim_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/flight_controls/aileron_trim_left
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/flight_controls/aileron_trim_right
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_CMND_HOLD_STOP sim/flight_controls/rudder_trim_left
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_CMND_HOLD_STOP sim/flight_controls/rudder_trim_right
+END_SOUND_ATTACHMENT
+
+
+#-------------------------------
+# lower buttons & lower radials
+#-------------------------------
+
+###***
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/instrument_brightness_ratio[1] != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/switches/instrument_brightness_ratio[1] == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/instrument_brightness_ratio[5] != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/switches/instrument_brightness_ratio[5] == 0
+END_SOUND_ATTACHMENT
+
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_pitot_heat_on_pilot != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/ice/ice_pitot_heat_on_copilot != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/engine/actuators/fuel_pump_on[0] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/engine/actuators/fuel_pump_on[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/engine/actuators/afterburner_enabled[0] != 0
+END_SOUND_ATTACHMENT
+
+
+#BEGIN_SOUND_ATTACHMENT
+#	EVENT_NAME /interior/console click
+#	VEH_PART cockpit 0
+#	EVENT_START_COND #ABS_DELTA=sim/cockpit2/electrical/cross_tie != 0
+#END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_crossfeed_from_lft_tank
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_crossfeed_from_rgt_tank
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_firewall_valve_lft_open
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_firewall_valve_lft_closed
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_firewall_valve_rgt_closed
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_firewall_valve_rgt_open
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/electrical/GPU_toggle
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/fuel/fuel_crossfeed_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/operation/failures/rel_hydpmp == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/operation/failures/rel_hydpmp2 == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/operation/failures/rel_hydpmp == 6
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/console click
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/operation/failures/rel_hydpmp2 == 6
+END_SOUND_ATTACHMENT
+#--------------------------------
+# central radial manips
+#--------------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_coarse_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_coarse_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_fine_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_fine_down
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_chapter_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_chapter_dn
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_page_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n1_page_dn
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/radios/actv_dme_coarse_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/radios/actv_dme_coarse_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/radios/actv_dme_fine_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/radios/actv_dme_fine_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_coarse_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_coarse_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_fine_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_fine_down
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_chapter_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_chapter_dn
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_page_up
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radio click
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/GPS/g430n2_page_dn
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit/autopilot/vertical_velocity != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit/autopilot/vertical_velocity == 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/radial
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/adf1_standby_frequency_hz != 0
+EVENT_END_COND ABS_DELTA=sim/cockpit2/radios/actuators/adf1_standby_frequency_hz == 0
+END_SOUND_ATTACHMENT
+
+
+
+#------OTHER ADF  controls-----
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/DME_mode != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/dme_power != 0
+END_SOUND_ATTACHMENT
+
+
+
+#---- O2 sys stuff------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/cockpit2/oxygen/actuators/demand_flow_setting
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/air hiss
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/oxygen/actuators/o2_valve_on == 1
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/air hiss off
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/oxygen/actuators/o2_valve_on == 0
+END_SOUND_ATTACHMENT
+
+
+#----------------------------------
+#  large switches - gear and flap
+#----------------------------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/lever detent
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/flight_controls/landing_gear_down
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/lever detent
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/flight_controls/landing_gear_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/lever detent
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/flight_controls/flaps_up
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/lever detent
+	VEH_PART cockpit 0
+EVENT_CMND_DOWN sim/flight_controls/flaps_down
+END_SOUND_ATTACHMENT
+
+
+
+#------------------------
+# doors
+#------------------------
+
+
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door0 open
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[0] > 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[0] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door0 close
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[0] < 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[0] > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door1 open
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[1] > 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[1] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door1 close
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[1] < 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[1] > 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door2 open
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[2] > 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[2] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door2 close
+	VEH_PART cockpit 0
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[2] < 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[2] > 0
+END_SOUND_ATTACHMENT
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door3 open
+	VEH_XYZ 0 0 7.644
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[3] > 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[3] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door3 close
+	VEH_XYZ 0 0 7.644
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[3] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/misc/door_open_ratio[3] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[3] > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door4 open
+	VEH_XYZ 1.4 0 -3.5
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door4 close
+	VEH_XYZ 1.4 0 -3.5
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[4] > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door5 open
+	VEH_XYZ 0.5 0 -3.5
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] > 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] < 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/door5 close
+	VEH_XYZ 0.5 0 -3.5
+	EVENT_START_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] < 0
+	##CUE_TRIGGER_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] == 0
+	EVENT_END_COND DELTA=sim/flightmodel2/misc/door_open_ratio[5] > 0
+END_SOUND_ATTACHMENT
+
+
+
+
+
+#-----------------
+# misc cockpit
+#-----------------
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /doors/clipboard
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/flightmodel2/misc/door_open_ratio[9] != 0
+END_SOUND_ATTACHMENT
+
+
+
+
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /stall
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/annunciators/stall_warning > 0
+	EVENT_END_COND sim/cockpit2/annunciators/stall_warning == 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/decision
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/gauges/indicators/radio_altimeter_dh_lit_pilot == 1
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/seatbelts
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/annunciators/fasten_seatbelt > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/AP fail
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/annunciators/autopilot_trim_fail > 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/AP disconnect
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/annunciators/autopilot_disconnect > 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/ELT
+	VEH_PART cockpit 0
+	EVENT_START_COND sim/cockpit2/switches/custom_slider_on[0] > 0
+	EVENT_END_COND sim/cockpit2/switches/custom_slider_on[0] == 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_05
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_06
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_07
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_08
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_09
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/operation/slider_10
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/systems/overspeed_test
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/clock button
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/annunciator/test_all_annunciators
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/pressurization/test
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/annunciator/test_fire_1_annun
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/annunciator/test_fire_2_annun
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/bleed_air/bleed_air_right_on
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/bleed_air/bleed_air_left_on
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle1
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/bleed_air/bleed_air_right_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/toggle3
+	VEH_PART cockpit 0
+	EVENT_CMND_DOWN sim/bleed_air/bleed_air_left_off
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/custom_slider_on[1] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/custom_slider_on[2] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/switches/custom_slider_on[3] != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/HSI_source_select_pilot != 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/sourceselect
+	VEH_PART cockpit 0
+	EVENT_START_COND ABS_DELTA=sim/cockpit2/radios/actuators/HSI_source_select_copilot != 0
+END_SOUND_ATTACHMENT
+
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/wiper1
+	VEH_PART		     cockpit 0
+        EVENT_START_COND sim/cockpit2/electrical/battery_on[0] == 1
+	EVENT_START_COND sim/cockpit2/switches/wiper_speed == 1
+	EVENT_END_COND sim/cockpit2/switches/wiper_speed != 1
+
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/wiper2
+	VEH_PART		     cockpit 0
+        EVENT_START_COND sim/cockpit2/electrical/battery_on[0] == 1
+	EVENT_START_COND sim/cockpit2/switches/wiper_speed == 2
+	EVENT_END_COND sim/cockpit2/switches/wiper_speed != 2
+
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+	EVENT_NAME /interior/wiper3
+	VEH_PART		     cockpit 0
+        EVENT_START_COND sim/cockpit2/electrical/battery_on[0] == 1
+	EVENT_START_COND sim/cockpit2/switches/wiper_speed == 3
+	EVENT_END_COND sim/cockpit2/switches/wiper_speed != 3
+
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/avionics
+    EVENT_START_COND        sim/cockpit2/switches/avionics_power_on == 1
+    EVENT_START_COND        sim/cockpit2/electrical/battery_on[0] == 1
+    EVENT_END_COND          sim/cockpit2/switches/avionics_power_on == 0
+    VEH_PART                cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/cockpit2/engine/actuators/throttle_ratio[1] > 0.95
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/cockpit2/engine/actuators/throttle_ratio[1] < 0.05
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/cockpit2/engine/actuators/throttle_ratio[1] > 0.95
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/cockpit2/engine/actuators/throttle_ratio[0] < 0.05
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/cockpit2/engine/actuators/throttle_ratio[0] > 0.95
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/flightmodel/engine/ENGN_prop[0] < 105
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/flightmodel/engine/ENGN_prop[0] > 165
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/flightmodel/engine/ENGN_prop[1] < 105
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/end stop
+    EVENT_START_COND        sim/flightmodel/engine/ENGN_prop[1] > 165
+    VEH_PART		     cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/trim
+    EVENT_START_COND        DELTA=sim/flightmodel2/controls/elevator_trim[0] < 0
+    EVENT_END_COND          DELTA=sim/flightmodel2/controls/elevator_trim[0] == 0
+    VEH_PART                 cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/trim
+    EVENT_START_COND        DELTA=sim/flightmodel2/controls/elevator_trim[0] > 0
+    EVENT_END_COND          DELTA=sim/flightmodel2/controls/elevator_trim[0] == 0
+    VEH_PART                 cockpit 0
+    PARAM_DREF_IDX          0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/large button off
+    EVENT_START_COND        sim/cockpit2/engine/actuators/prop_mode[0] == 0.0
+    VEH_PART                cockpit 0
+    PARAM_DREF_IDX          1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/large button on
+    EVENT_START_COND        sim/cockpit2/engine/actuators/prop_mode[0]= 1.0
+    VEH_PART                cockpit 0
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/large button off
+    EVENT_START_COND        sim/cockpit2/engine/actuators/prop_mode[1] == 0.0
+    VEH_PART                cockpit 0
+    PARAM_DREF_IDX          1
+END_SOUND_ATTACHMENT
+
+BEGIN_SOUND_ATTACHMENT
+    EVENT_NAME              /interior/large button on
+    EVENT_START_COND        sim/cockpit2/engine/actuators/prop_mode[1]= 1.0
+    VEH_PART                cockpit 0
+END_SOUND_ATTACHMENT

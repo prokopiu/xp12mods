@@ -267,7 +267,7 @@ sw_itemvoid_c:\yellow\ Engage AP when feasable and established on stable departu
 sw_itemvoid_c:\yellow\ Trim for 250 KTS before engaging A/P
 sw_item_c:\white\AUTOPILOT [MCP] |ON:sim/cockpit2/annunciators/autopilot:1
 sw_item_c:\white\FLAPS 15|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>190
-sw_item_c:\white\FLAPS 5|SET:sim/cockpit2/controls/flap_ratio:0.5
+sw_item_c:\white\FLAPS 5|SET:sim/cockpit2/controls/flap_ratio:<=0.5
 sw_item_c:\white\FLAPS 5|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>230
 sw_item_c:\white\FLAPS UP|SET:sim/cockpit2/controls/flap_ratio:0
 sw_item_c:\white\250 KNOTS FLAPS SLATS|UP:(sim/cockpit2/controls/flap_ratio:0)&&(sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>245)

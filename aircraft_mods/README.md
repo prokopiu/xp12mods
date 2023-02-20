@@ -8,3 +8,5 @@ The files go into the folder of each addon as you see them here.
 - Carenado F50 1.1 fixes that airplane to work properly in XP12 (and XP11 btw)
 - SSG_B748_Series contains a new livery I didi not find anywhere else. Challenge Airlines Cargo
 - EMB110-V3 fixes the totaly inadequate cockpit lighting in the Dreamfoil EMB-110
+- Metro III AC Freighter additionally modded version of the Metroliner freeware
+- Metro III AC Passenger additionally modded version of the Metroliner freeware

@@ -1,0 +1,237 @@
+sw_checklist:Metro liner III Checklist
+sw_remark:Metro liner III Checklist
+sw_item:Metro liner short checklist by royaloak
+sw_continue:ORIGINATING
+
+sw_checklist:ORIGINATING
+sw_remark:Pre-Flight Checklist
+sw_item:BOOK FLIGHT|CONFIRM
+sw_item:Sound Levels|CHECK
+sw_itemvoid:Preliminary Cockpit Preparation
+sw_item:Parking Brakes ON|CHECK:(sim/flightmodel/controls/parkbrake:1)
+sw_item:Landing Gear DOWN|CHECK:(sim/cockpit2/controls/gear_handle_down:1)
+sw_item:Nose Wheel Steering OFF|CHECK:sim/cockpit2/controls/nosewheel_steer_on:0
+sw_item:Power GPU or Battery|CHECK:(sim/cockpit/electrical/generator_apu_on:1)||(sim/cockpit2/electrical/battery_on[0]:1)
+sw_item:Engine Stop/Feather Both IN|CHECK:(sim/flightmodel/engine/ENGN_propmode[0]:1)&&(sim/flightmodel/engine/ENGN_propmode[1]:1)
+sw_item:Fuel Shutoffs Open|CHECK:(sim/cockpit2/fuel/firewall_closed_right:0)&&(sim/cockpit2/fuel/firewall_closed_left:0)
+sw_item:Hydraulic Shutoff Both Open|CHECK:(sim/operation/failures/rel_hydpmp:0)&&(sim/operation/failures/rel_hydpmp2:0)
+sw_item:Annunciators considered and tested|CHECK:sim/cockpit2/switches/generic_lights_switch[11]:1
+sw_item:Radar OFF|CHECK:sim/cockpit/switches/EFIFS_shows_weather:0
+sw_continue:BEFORE START
+
+sw_checklist:BEFORE START
+sw_remark:Before Start Checklist
+sw_item:Battery Left & Right ON|CHECK:(sim/cockpit/electrical/battery_array_on[0]:1)&&(sim/cockpit/electrical/battery_array_on[1]:1)
+sw_item:Fuel Required|CHECK
+sw_item:Fuel Loaded|CHECK
+sw_item:Departure Briefing Completed|CHECK
+sw_remark:Flight director switch controlled by AP Switch to Yellow
+sw_item:Flight Director Switch ON|CHECK:sim/cockpit2/autopilot/flight_director_mode:1
+sw_item:ALTIMETER (QNH)SET|CHECK:1:closer_than({sim/cockpit/misc/barometer_setting}, {sim/weather/barometer_sealevel_inhg}, 0.01)
+sw_item:POWER LEVERS to GROUND IDLE|CHECK:sim/cockpit2/engine/actuators/throttle_ratio_all:<0.040
+sw_item:Propellers both LOW RPM|CHECK:(sim/flightmodel/engine/ENGN_prop[0]:<119.0)&&(sim/flightmodel/engine/ENGN_prop[1]:<119.0)
+sw_item:Trim SET for takeoff|CHECK:sim/flightmodel/controls/elv_trim:0
+sw_item:Parking Brakes ON|CHECK:(sim/flightmodel/controls/parkbrake:1)
+sw_item:Seat Belts and No Smoking ON|CHECK:sim/cockpit2/switches/generic_lights_switch[2]:0.5
+sw_item:Pressurisation SET|CHECK
+sw_item:Bleeds OFF|CHECK:(sim/cockpit2/bleedair/actuators/engine_bleed_sov[0]:0)&&(sim/cockpit2/bleedair/actuators/engine_bleed_sov[1]:0)
+sw_item:Doors CLOSED and SAFE|CHECK:(sim/cockpit2/switches/custom_slider_on[0]:0)&&(sim/cockpit2/switches/custom_slider_on[1]:0)
+sw_item:Rotating Beacon Only ON|CHECK:sim/cockpit2/switches/beacon_on:1
+sw_item:Nav Lights Only ON|CHECK:sim/cockpit/electrical/nav_lights_on:1
+sw_item:Ice Light ON|CHECK:sim/cockpit2/switches/landing_lights_switch[3]:1
+sw_continue:Right Engine Start
+
+sw_checklist:Right Engine Start
+sw_remark:Right Engine Start Procedure
+sw_item:Right Engine Start Switch HOLD|CHECK:sim/flightmodel2/engines/N1_percent[1]:>12
+sw_item:N1 Above 51% |CHECK:sim/flightmodel2/engines/N1_percent[1]:>51
+sw_item:Right Engine Start Switch RELEASE|CHECK:sim/cockpit2/engine/actuators/starter_hit[1]:0
+sw_item:Generator Right|ON:sim/cockpit2/electrical/generator_on[1]:1
+sw_continue:Left Engine Start
+
+sw_checklist:Left Engine Start
+sw_remark:Left Engine Start Procedure
+sw_item:left Engine Start Switch HOLD|CHECK:sim/flightmodel2/engines/N1_percent[0]:>12
+sw_item:N1 Above 51% |CHECK:sim/flightmodel2/engines/N1_percent[0]:>51
+sw_item:Left Engine Start Switch RELEASE|CHECK:sim/cockpit2/engine/actuators/starter_hit[0]:0
+sw_item:Generator Left ON|CHECK:sim/cockpit2/electrical/generator_on[0]:1
+sw_continue:After Engine Start
+
+sw_checklist:After Engine Start
+sw_remark:After Engine Start Checklist
+sw_item:External Power DISCONNECTED|CHECK:sim/cockpit/electrical/generator_apu_on:0
+sw_item:Window Heat HIGH|CHECK:sim/cockpit/switches/anti_ice_window_heat:1
+sw_item:Ice Protection as Required|CHECK
+sw_item:Speed Bug Set|CHECK
+sw_item:Instruments Checked|CHECK
+sw_item:Boost Pumps left and Right ON|CHECK:(sim/cockpit2/switches/generic_lights_switch[6]:1)&&(sim/cockpit2/switches/generic_lights_switch[7]:1)
+sw_item:Nose Wheel Steering ARMED|CHECK:sim/cockpit2/controls/nosewheel_steer_on:1
+sw_item:Flaps one quarter SET|CHECK:sim/cockpit2/controls/flap_ratio:0.333333
+sw_continue:Before Taxi
+
+sw_checklist:Before Taxi
+sw_remark:Before Taxi Checklist
+sw_item:Seat Belts and No Smoking ON|CHECK:sim/cockpit2/switches/generic_lights_switch[2]:0.5
+sw_item:Generators, both, ON|CHECK:(sim/cockpit2/electrical/generator_on[0]:1)&&(sim/cockpit2/electrical/generator_on[1]:1)
+sw_item:Other Lights AS NEEDED|CHECK
+sw_item:BAROMETRIC VALUE CHECK LOCAL QNH|CHECK:sim/cockpit/misc/barometer_setting:{sim/weather/barometer_sealevel_inhg}-0.03|{sim/weather/barometer_sealevel_inhg}+0.03
+sw_item:Pitot Heat #1 and #2 ON|CHECK:(sim/cockpit2/ice/ice_pitot_heat_on_pilot:1)&&(sim/cockpit2/ice/ice_pitot_heat_on_copilot:1)
+sw_item:Left Fuel Boost Pump On|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[0]:1
+sw_item:Right Fuel Boost Pump On|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[1]:1
+sw_item:Avionics Master Switch On|CHECK:sim/cockpit2/switches/avionics_power_on:1
+sw_item:Inverter #1 SWITCH ON|CHECK:sim/cockpit2/electrical/inverter_on[0]:1
+sw_item:Nav source As required|CHECK
+sw_item:Heading Bug SET|CHECK
+sw_item:Autopilot Altitude Select SET|CHECK 
+sw_item:Lights AS REQUIRED|CHECK
+sw_item:Radios AS REQUIRED|CHECK
+sw_item:Flight Plan Checked discontinuities removed|CHECK
+sw_item:Taxi lights ON|CHECK:sim/cockpit/electrical/taxi_light_on:1
+sw_item:Nav Lights ON|CHECK:sim/cockpit/electrical/nav_lights_on:1
+sw_item:TRANSPONDER STANDBY|CHECK:sim/cockpit/radios/transponder_mode:1
+sw_item:TRANSPONDER CODE SET|CHECK
+sw_item:Radar ON|CHECK:sim/cockpit/switches/EFIFS_shows_weather:1
+sw_item:Cabin Temperature Mode AS REQUIRED|CHECK
+sw_item:Annunciator Panel respond as necessary|CHECK
+sw_continue:FLIGHT CONTROLS CHECK
+
+sw_checklist:FLIGHT CONTROLS CHECK
+sw_remark:FLIGHT CONTROLS CHECK
+sw_item:FLIGHT CONTROL ELEVATORS FULL FORWARD| :sim/cockpit2/controls/yoke_pitch_ratio:-1
+sw_item:FLIGHT CONTROL ELEVATORS FULL BACK| :sim/cockpit2/controls/yoke_pitch_ratio:1
+sw_item:FLIGHT CONTROL AILERONS FULL LEFT| :sim/cockpit2/controls/yoke_roll_ratio:-1
+sw_item:FLIGHT CONTROL AILERONS FULL RIGHT| :sim/cockpit2/controls/yoke_roll_ratio:1
+sw_item:FLIGHT CONTROL RUDDER FULL LEFT| :sim/cockpit2/controls/yoke_heading_ratio:-1
+sw_item:FLIGHT CONTROL RUDDER FULL RIGHT| :sim/cockpit2/controls/yoke_heading_ratio:1
+sw_remark:Test brakes during taxi
+sw_continue:Before Take-off
+
+sw_checklist:Before Take-off
+sw_remark:Before Take-off Checklist
+sw_item:Propeller Sync OFF|CHECK:sim/cockpit2/switches/prop_sync_on:0
+sw_item:Flaps one quarter SET|CHECK:sim/cockpit2/controls/flap_ratio:0.333333
+sw_item:Flight instruments|CHECK
+sw_item:Bleeds OFF|CHECK:(sim/cockpit2/bleedair/actuators/engine_bleed_sov[0]:0)&&(sim/cockpit2/bleedair/actuators/engine_bleed_sov[1]:0)
+sw_item:Trim SET for takeoff|CHECK:sim/flightmodel/controls/elv_trim:0
+sw_item:Propeller Levers FULL FORWARD|CHECK:(sim/flightmodel/engine/ENGN_prop[0]:>165)&&(sim/flightmodel/engine/ENGN_prop[1]:>165)
+sw_item:Landing lights ON|CHECK:sim/cockpit/electrical/landing_lights_on:1
+sw_item:Strobe and NAV ON|CHECK:sim/cockpit/electrical/strobe_lights_on:1
+sw_item:Taxi lights OFF|CHECK:sim/cockpit/electrical/taxi_light_on:0
+sw_item:Transponder ALT|CHECK:sim/cockpit/radios/transponder_mode:2
+sw_item:Water Injection as Required|CHECK
+sw_item:Cautions checked and Considered|CHECK
+sw_continue:After Take-off Checklist
+
+sw_checklist:After Take-off Checklist
+sw_remark:After Take-off Checklist
+sw_rcolsize:140
+sw_item:Gear UP|CHECK:sim/cockpit/switches/gear_handle_status:0
+sw_item:Flaps UP|CHECK:sim/flightmodel/controls/wing1l_fla1def:0
+sw_item:Nose Wheel Steering OFF|CHECK:sim/cockpit2/controls/nosewheel_steer_on:0
+sw_item:POWER 630 EGT|CHECK:(sim/flightmodel/engine/ENGN_EGT[0]:<0.95)&&(sim/flightmodel/engine/ENGN_EGT[1]:<0.95)&&(sim/flightmodel/engine/ENGN_EGT[0]:>0.92)&&(sim/flightmodel/engine/ENGN_EGT[1]:>0.92)
+sw_item:Autopilot ON at 200 AGL|CHECK:sim/cockpit/autopilot/autopilot_mode:2
+sw_item:LOC Engaged As required|CHECK
+sw_item:Cabin altitude and pressure|CHECK
+sw_item:Propeller Sync ON|CHECK:sim/cockpit2/switches/prop_sync_on:1
+sw_item:Water Injection OFF|CHECK:sim/aircraft2/engine/max_power_limited_watts:745700
+sw_item:Left Fuel Boost Pump OFF|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[0]:0
+sw_item:Right Fuel Boost Pump OFF|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[1]:0
+sw_item:Bleeds ON|CHECK:(sim/cockpit2/bleedair/actuators/engine_bleed_sov[0]:1)&&(sim/cockpit2/bleedair/actuators/engine_bleed_sov[1]:1)
+sw_item:AtTransition Altitude Set Standard QNH|CHECK:sim/cockpit/misc/barometer_setting:29.92
+sw_item:Landing lights OFF|CHECK:sim/cockpit/electrical/landing_lights_on:0
+sw_itemvoid:If ICING Conditions
+sw_item:Anti Ice- Mode Select As Required|CHECK
+sw_continue:Cruise Checklist
+
+sw_checklist:Cruise Checklist
+sw_remark:Cruise Checklist
+sw_rcolsize:140
+sw_item:Bleed Air ON|CHECK:sim/cockpit/pressure/bleed_air_on:1
+sw_item:Landing lights OFF|CHECK:sim/cockpit/electrical/landing_lights_on:0
+sw_item:Seatbelt Sign as Required|CHECK
+sw_item:Prop control Adjust Green Band|CHECK
+sw_continue:In Range Check
+
+sw_checklist:In Range Check
+sw_remark:In Range Checklist
+sw_rcolsize:120
+sw_item:Seat Belts and No Smoking ON|CHECK:sim/cockpit2/switches/generic_lights_switch[2]:0.5
+sw_itemvoid:__________________________________
+sw_itemvoid:If ICING Conditions
+sw_item:Anti Ice- Mode Select as Required|CHECK
+sw_item:Window Heat HIGH|CHECK:sim/cockpit/switches/anti_ice_window_heat:1
+sw_item:LANDING DATA|CHECK
+sw_item:APPROACH BRIEFING COMPLETE|CHECK
+sw_continue:Descent 10000 Feet Checklist
+
+sw_checklist:Descent 10000 Feet Checklist
+sw_remark:Descent to 10000 Feet Checklist
+sw_rcolsize:140
+sw_itemvoid:If ICING Conditions
+sw_item:Anti Ice- Mode Select as Required|CHECK
+sw_item:Nav Displays set for APPROACH|CHECK
+sw_item:Landing lights ON at FL100|CHECK:sim/cockpit/electrical/landing_lights_on:1
+sw_item:HSI Source NAV|CHECK:sim/cockpit2/radios/actuators/HSI_source_select_pilot:<2
+sw_item:At Transition Level LOCAL QNH SET|CHECK:sim/cockpit/misc/barometer_setting:{sim/weather/barometer_sealevel_inhg}-0.03|{sim/weather/barometer_sealevel_inhg}+0.03
+sw_item:Approach Reviewed|CHECK
+sw_item:Nav aids radios SET|CHECK
+sw_item:Courses SET|CHECK
+sw_continue:Before Landing Checklist
+
+
+sw_checklist:Before Landing Checklist
+sw_remark:Before Landing Checklist
+sw_rcolsize:140
+sw_item:Landing lights ON|CHECK:sim/cockpit/electrical/landing_lights_on:1
+sw_remark:Slow to flap range before groundslope
+sw_item:Propeller Sync OFF|CHECK:sim/cockpit2/switches/prop_sync_on:0
+sw_item:Propeller Levers FULL FORWARD|CHECK:(sim/flightmodel/engine/ENGN_prop[0]:>165)&&(sim/flightmodel/engine/ENGN_prop[1]:>165)
+sw_item:Flaps As Required|CHECK
+sw_item:Left Fuel Boost Pump On|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[0]:1
+sw_item:Right Fuel Boost Pump On|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[1]:1
+sw_item:Nav aids SET and APP armed|CHECK
+sw_item:Landing Gear DOWN AND LOCKED|CHECK:sim/cockpit/switches/gear_handle_status:>0
+sw_item:Flaps FULLDOWN FOR APPROACH|CHECK:sim/flightmodel/controls/flaprqst:1
+sw_item: Speed approach speed SET|CHECK
+sw_item:Nose Wheel Steering OFF|CHECK:sim/cockpit2/controls/nosewheel_steer_on:0
+sw_itemvoid:Autopilot is switched off by Standby Button
+sw_item:Autopilot OFF at 200 AGL|CHECK:sim/cockpit/autopilot/autopilot_mode:0
+sw_continue:After Landing Checklist
+
+sw_checklist:After Landing Checklist
+sw_remark:After Landing Checklist
+sw_rcolsize:140
+sw_item:Nose Wheel Steering ON|CHECK:sim/cockpit2/controls/nosewheel_steer_on:1
+sw_item:Landing Lights and Strobes OFF|CHECK:(sim/cockpit/electrical/strobe_lights_on:0)&&(sim/cockpit/electrical/landing_lights_on:0)
+sw_item:Taxi lights ON|CHECK:sim/cockpit/electrical/taxi_light_on:1
+sw_item:Flight Directors OFF|CHECK:sim/cockpit/autopilot/autopilot_mode:0
+sw_item:Flaps UP|CHECK:sim/flightmodel/controls/wing1l_fla1def:0.0
+sw_item:Transponder STBY|CHECK:sim/cockpit/radios/transponder_mode:1
+sw_continue:Shutdown Checklist
+
+sw_checklist:Shutdown Checklist
+sw_remark:Shutdown Checklist
+sw_rcolsize:140
+sw_item:Parking Brake SET|CHECK:sim/flightmodel/controls/parkbrake:!0
+sw_item:Nose Wheel Steering OFF|CHECK:sim/cockpit2/controls/nosewheel_steer_on:0
+sw_item:Left Fuel Boost Pump OFF|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[0]:0
+sw_item:Right Fuel Boost Pump OFF|CHECK:sim/cockpit2/engine/actuators/fuel_pump_on[1]:0
+sw_item:External power Connected|CHECK:sim/cockpit/electrical/generator_apu_on:1
+sw_item:Fuel Shutoffs CLOSED|CHECK:(sim/cockpit2/fuel/firewall_closed_right:1)&&(sim/cockpit2/fuel/firewall_closed_left:1)
+sw_item:Taxi lights OFF|CHECK:sim/cockpit/electrical/taxi_light_on:0
+sw_item:Pitot Heat #1 and #2 OFF|CHECK:(sim/cockpit2/ice/ice_pitot_heat_on_pilot:0)&&(sim/cockpit2/ice/ice_pitot_heat_on_copilot:0)
+sw_item:Window heat OFF|CHECK:sim/cockpit/switches/anti_ice_window_heat:0
+sw_item:All Anti-ice OFF|CHECK:(sim/cockpit2/ice/ice_surface_boot_on:0) && (sim/cockpit2/ice/ice_prop_heat_on_per_engine[0]:0) && (sim/cockpit2/ice/ice_prop_heat_on_per_engine[1]:0)
+sw_item:Bleeds OFF|CHECK:(sim/cockpit2/bleedair/actuators/engine_bleed_sov[0]:0)&&(sim/cockpit2/bleedair/actuators/engine_bleed_sov[1]:0)
+sw_item:Signs to No Smoking Only|CHECK:sim/cockpit2/switches/generic_lights_switch[2]:1
+sw_item:Engine Generators OFF|CHECK:(sim/cockpit/electrical/generator_on[0]:0)&&(sim/cockpit/electrical/generator_on[1]:0)
+sw_item:Beacon Light OFF|CHECK:sim/cockpit/electrical/beacon_lights_on:0
+sw_item:Doors OPEN|CHECK:(sim/cockpit2/switches/custom_slider_on[0]:1)&&(sim/cockpit2/switches/custom_slider_on[1]:1)
+sw_item:Avionics OFF|CHECK:sim/cockpit/electrical/avionics_on:0
+sw_item:Inverter #1 SWITCH OFF|CHECK:sim/cockpit2/electrical/inverter_on[0]:0
+sw_item:Battery Left & Right OFF|CHECK:(sim/cockpit/electrical/battery_array_on[0]:0)&&(sim/cockpit/electrical/battery_array_on[1]:0)
+sw_remark:END of CHECKLIST
+
+
+
+

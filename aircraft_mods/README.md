@@ -10,3 +10,4 @@ The files go into the folder of each addon as you see them here.
 - EMB110-V3 fixes the totaly inadequate cockpit lighting in the Dreamfoil EMB-110
 - Metro III AC Freighter additionally modded version of the Metroliner freeware
 - Metro III AC Passenger additionally modded version of the Metroliner freeware
+- Carenado B1900D fixes cockpit windows

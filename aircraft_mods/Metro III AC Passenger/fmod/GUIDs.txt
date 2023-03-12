@@ -1,77 +1,36 @@
-{7ea9796b-532c-4b06-abbf-84a84a4d6781} event:/doors/clipboard
-{561df6a5-1cb3-42b5-8382-5fc0599b2898} event:/doors/door0 close
-{3d19e5f3-53d6-4ad2-ace1-6545a61a3044} event:/doors/door0 open
-{1e006dcd-b5a9-408a-a9f2-704a22af8728} event:/doors/door1 close
-{f22604eb-199e-4d5f-861d-e3a72e6832bb} event:/doors/door1 open
-{1370e6aa-a3cb-4666-bb4c-4f9029b7afc4} event:/doors/door2 close
-{bc637c03-73ab-4744-a4d7-adf625e0d7db} event:/doors/door2 open
-{bb609b25-936e-45d9-89a1-f9907c19b655} event:/doors/door3 close
-{36ffea94-c4a7-4a60-8291-d3cc97adf23d} event:/doors/door3 open
-{f333a771-f01f-4c37-8e85-150472ea4809} event:/doors/door4 close
-{bf8b0067-2e2e-473b-b1ce-a91d2bfc6b4d} event:/doors/door4 open
-{6b8e3d31-57f3-4344-8f17-6fdb2af2fd4d} event:/doors/door5 close
-{4deda245-2a20-486c-9018-45a09f47316e} event:/doors/door5 open
-{48f3e3b9-fdca-44f1-a40a-721325aede56} event:/engine/engine shutdown
-{3b42c528-a82a-40e0-98ee-5f60f0d3a551} event:/engine/prop 1 front
-{4ad13296-dc2f-4d02-97da-1efc2c4d34bf} event:/engine/prop 1 in
-{33854481-091a-45b2-9b33-73de70c677ee} event:/engine/prop 1 rear
-{fe57c4cd-cb59-49ee-aa22-683d1c48d4e3} event:/engine/prop 2 front
-{34ca3273-dd34-417e-8f39-f3034949b787} event:/engine/prop 2 in
-{dd47988b-2872-4d53-8aaa-9dd20d61841d} event:/engine/prop 2 rear
-{cde0e1d1-9a7e-4f91-9809-446cd25247ea} event:/engine/prop rasp
-{6e2c90db-ff25-4466-acf6-48f5ea8cce3e} event:/engine/starter
-{2da7143c-ab17-4386-80be-06623d9f33c4} event:/interior/air hiss
-{40155f6a-c840-4472-827a-70368258453b} event:/interior/air hiss off
-{a88d456f-b64b-49c7-90ed-27d2850efa12} event:/interior/AP disconnect
-{66a5ef30-dc66-4c32-bf03-52a9b38a40b3} event:/interior/AP fail
-{280bbd62-dd8e-4329-bcc5-5ea8b43e3c0a} event:/interior/avionics
-{97d12725-babb-423f-80e2-cec26a0c3434} event:/interior/brake back
-{af2153a4-fb71-466c-9ac4-89dd90e6402f} event:/interior/brake forward
-{e6f7074b-e391-40df-95c6-6cfee6695b76} event:/interior/clock button
-{5f2637c9-0c14-40cc-aae8-f63101948412} event:/interior/console click
-{36162831-635d-47aa-a5ae-b531211a82c1} event:/interior/decision
-{4e255c92-79c3-4982-b8b7-f8d7208fb1af} event:/interior/ELT
-{79278ef8-152f-4eed-acce-343098aba9f0} event:/interior/end stop
-{4b914c9c-54de-4e16-99b8-fa5c2e54c5ca} event:/interior/large button off
-{e470649b-b688-48f9-b912-b52858c4ae0d} event:/interior/large button on
-{410d59bc-eb06-4523-bf2e-25665e1cd0a7} event:/interior/lever detent
-{37f9f71f-ffde-4ac6-8539-8d3552b4fada} event:/interior/radial
-{b0f26bd8-78e4-4019-a2b3-8e1ef46cb3ea} event:/interior/radio click
-{ea8e45ec-d2fb-4b6d-a7ab-49f9e1b0b90e} event:/interior/rattle
-{9f1c5183-9034-4f4f-ab00-9e663e56f727} event:/interior/seatbelts
-{618066e4-5707-4ade-a95c-71474ae7da5b} event:/interior/sourceselect
-{c8b11558-b7eb-47fc-ae8d-d31bda2a5d09} event:/interior/toggle1
-{0f9597d8-592c-44d9-9b86-8565522c42e1} event:/interior/toggle3
-{c165963b-6c6d-4017-8e7f-50a5cff246d4} event:/interior/trim
-{5e13d37d-b01d-4b3a-b490-a94773608c67} event:/interior/wind
-{347e06e9-7f00-49f1-8335-325016b6ac66} event:/interior/wiper1
-{8e9cfa6c-bec7-4eac-8f86-1d423d9f2636} event:/interior/wiper2
-{1d09d2c9-ae72-4ceb-8aad-f791208132e6} event:/interior/wiper3
-{eb6263d6-e335-4188-a2ca-e80c1bccc384} event:/crash
-{e39dfef7-1afa-4a29-999b-abd637e7a2bb} event:/crashvne
-{823c3953-572b-431a-a618-30b0a5133d21} event:/flaps
-{eb6a9eee-47b0-4171-b529-e0df701e7f4d} event:/flaps up
-{25181664-cd6f-4121-8dd3-308cf3edc9b6} event:/flapsfail
-{8f8224da-b0ac-4294-a1e1-0a70126e4439} event:/fuelpump
-{0dbd7084-cb5c-43bc-bd8f-b54470558a0d} event:/gear down
-{ba9d5eec-fadd-4e7e-a04f-5e72d2422062} event:/gear up
-{4ad2f144-9a20-4cb1-8044-621a4c6bd1e4} event:/road
-{59018c51-3d3d-4ff4-bd57-b6c4f94180f2} event:/skid
-{283de798-28fe-4f18-9298-c09dabbdaae6} event:/splash
-{8de75d19-18ef-48bd-aa4c-29df2ff08e3a} event:/Spray
-{f0a50ce0-9963-4cb5-a4fe-5ec3f251fff8} event:/stall
-{eb617d3b-8f2c-4676-8fa1-bdc897636e47} event:/tire contact
-{84c3b888-3c14-4325-84da-e4605106b025} event:/tire pop
+{4341a50e-7f23-4d66-9cd5-a5c97294af48} event:/Cockpit/L1
+{8a5ecc01-8c41-45a2-a781-158ff359e864} event:/Cockpit/S1
+{1f0d4f3e-4c93-4e59-a1cf-962c2a87db89} event:/Cockpit/S2
+{53d51184-125c-4dd8-92e7-842ca4ef8270} event:/Dynamics/GearDp
+{c5346699-8bb0-4e6e-9e56-20cbbcc3519f} event:/Dynamics/GearWind
+{d9ec10f7-6b6b-4476-8681-4d039aa0bfe8} event:/Dynamics/GRoll
+{4b5c3f7b-6dd1-4e93-997f-126b8ffefaea} event:/Dynamics/TouchF
+{875ce55f-8cfc-4145-9cfd-466d39a44e02} event:/Dynamics/TouchL
+{dc9e3c76-a731-492f-9a93-b8dd2d599d65} event:/Dynamics/TouchR
+{a2a72794-34eb-4eea-b1a9-1f52e72af494} event:/Dynamics/TouchX
+{08ca3b31-8798-4d44-ada2-23184229ef9e} event:/Engines_MTR/PropL
+{6553ffd9-c83c-4eb3-a122-2298135d8a8c} event:/Engines_MTR/PropLX
+{1f1950e0-30f4-42bf-8f46-009664e88923} event:/Engines_MTR/PropR
+{8e07a406-bf69-40f2-8ac0-088f7678ce2b} event:/Engines_MTR/PropRX
+{96a62b07-82f7-435e-b42b-b3583ee6b50c} event:/Engines_MTR/StartL
+{78be7a81-66e9-4180-8b13-0a2bc46994e5} event:/Engines_MTR/StartLX
+{7a8f9265-15d2-4eef-abff-fe3fd734ca0e} event:/Engines_MTR/StartR
+{7552284c-ca4f-4693-bad2-728c594c4d07} event:/Engines_MTR/StartRX
+{d5c02ae3-dda1-4f68-8315-0fbe9dafbdd8} event:/Weather/Wind
+{07f16831-e331-4314-b1c6-6dd6236ad483} event:/Weather/WindX
 {9f08114d-36ec-44cc-b8bf-b2babda09f9e} bus:/
 {7f7c05a4-e05a-4d44-94fe-d4691147a9b7} bus:/Master
 {e3492bec-f854-4fbb-b2bc-23586269032e} bus:/Master/Copilot
+{b6c156f1-9861-405c-a622-92b2ab8010a7} bus:/Master/Environment
+{2ec1e5a7-45b2-462c-8f7c-8f86d762d2cd} bus:/Master/Environment/EnvExt
+{e64379b7-e74f-4288-9877-bab7ed6b39b9} bus:/Master/Environment/EnvInt
 {a5a85a81-afd5-4425-9dc2-6e50f7776e6a} bus:/Master/Exterior Processed
 {06db5351-0b2f-4648-b97a-a33b40a00e11} bus:/Master/Exterior Processed/Aircraft
-{b6c156f1-9861-405c-a622-92b2ab8010a7} bus:/Master/Exterior Processed/Environment
 {8dbbc9d7-a954-4ed0-b1f1-f8111b03cbd1} bus:/Master/Exterior Unprocessed
 {751f5066-4651-4afb-a410-4cb9db0894c9} bus:/Master/Interior
 {d8526059-b27c-4eae-9b14-a1ee1cb3dfa1} bus:/Master/Radios
 {77575f3b-b9cd-4bff-9056-637cff744a14} bus:/Master/UI
-{cfd4202a-6393-432d-bafa-7fca40a15d6b} snapshot:/Start Silent
-{40f75486-5fc5-4348-8e5b-da8f57f00386} snapshot:/inside
-{c813eca0-f7ce-4f37-9c21-44ff6b750e67} bank:/Master Bank
+{cbc83c95-9d2e-4200-851b-6e2092227934} snapshot:/No Ext
+{5176d41b-385a-4f05-b0d8-a306c434af1e} snapshot:/No Int
+{29f91093-3664-4f21-b525-e34cb9fdb96a} snapshot:/Delay
+{59c080fa-3c7e-4d89-b123-e7816aa3a912} bank:/Master Bank

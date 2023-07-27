@@ -1,0 +1,9 @@
+A
+750 version
+  x   y  
+  0   0	// comment: rose offsets in ROSE mode (only some glass HSI's have multiple-mode ability though)
+  0   0	// comment: rose offsets in ARC mode (only some glass HSI's have multiple-mode ability though)
+ 64   0	// comment: glideslope lateral and vertical displacement from center
+ 18  18	// comment: localizer and glideslope travel per dot deflection
+-39  65	// comment: text DME indicator
+ 39  65	// comment: text OBS indicator

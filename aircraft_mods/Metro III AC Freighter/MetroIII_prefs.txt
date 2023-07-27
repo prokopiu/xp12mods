@@ -193,8 +193,8 @@ _wind_display_2 0
 _inset_map_2 1
 _dg_lat_adjust_0 0.000000
 _dg_lat_adjust_1 0.000000
-_dg_lat_adjust_2 48.685802
-_dg_lat_adjust_3 48.685802
-_dg_lat_adjust_4 48.685802
-_dg_lat_adjust_5 48.685802
+_dg_lat_adjust_2 48.353203
+_dg_lat_adjust_3 48.353203
+_dg_lat_adjust_4 48.353203
+_dg_lat_adjust_5 48.353203
 atc/_acf_tailnumber_ N360AE

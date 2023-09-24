@@ -51108,7 +51108,7 @@ P acf/_has_radio_alt_callout 1
 P acf/_has_refuel_rcv 0
 P acf/_has_refuel_snd 0
 P acf/_has_spot_lite 0
-P acf/_has_vac_cross_tied 0
+P acf/_has_vac_cross_tied 1
 P acf/_has_vac_venturi 0
 P acf/_has_yawdamp_but 0
 P acf/_heat_x_ctr 0.0
@@ -51224,7 +51224,7 @@ P acf/_max_gen_amp_per_gen/count 8
 P acf/_max_mach_eff 0.839999974
 P acf/_max_oilT 90.0
 P acf/_max_press_diff 5.0
-P acf/_max_vac 4.500000000
+P acf/_max_vac 6.300000000
 P acf/_max_xmsn_P 1.0
 P acf/_max_xmsn_T 1.0
 P acf/_min_n1 1.0

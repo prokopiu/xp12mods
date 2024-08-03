@@ -1,72 +1,78 @@
-######## Colors for use with latest version of XChecklist
+######## Colors for use with latest version of XChecklist 
 sw_define_colour:red:1.0,0.0,0.0
 sw_define_colour:green:0.0,1.0,0.0
 sw_define_colour:blue:0.0,0.0,1.0
-sw_define_colour:orange:1.0,0.2,0.0 
+sw_define_colour:orange:1.0,1.0,0.0 
 sw_define_colour:yellow:1.0,1.0,0.0
-sw_define_colour:white:0.9,0.9,0.9
-sw_define_colour:grey:0.6,0.6,0.6
+sw_define_colour:whitex:1.0,1.0,1.0
+sw_define_colour:greyx:1.0,0.54,0.0
 ########
-sw_checklist: V1.0 BY PROKOPIU, 01.2023
+sw_checklist: V1.1 BY PROKOPIU, 06.2024
 ########
 sw_itemvoid_c:\white\               KPCREW 2.3 COMPATIBLE Cessna Citation X CHECKLIST
 sw_itemvoid:::::::::::::::::::::::::::::::::::::::: TECHNICAL DATA ::::::::::::::::::::::::::::::::::::::
-sw_itemvoid_c:\white\ =============================
-sw_itemvoid_c:\green\ == Weights (lb/kg)	Citation X, CE-750
-sw_itemvoid_c:\green\ Max Ramp					36,400/16.510
-sw_itemvoid_c:\green\ Max Takeoff				31,400/14.242
-sw_itemvoid_c:\green\ Max Landing				31,800/14.424
-sw_itemvoid_c:\green\ Zero Fuel				24,400/11.067
-sw_itemvoid_c:\green\ BOW						22,100/10.024
-sw_itemvoid_c:\green\ Max Payload				 2,300/1.043
-sw_itemvoid_c:\green\ Useful Load				14,300/6.486
-sw_itemvoid_c:\green\ Executive Payload		 1,800/816
-sw_itemvoid_c:\green\ Max Fuel					12,931/5.865
-sw_itemvoid_c:\green\ Avail Payload Max Fuel	 1,369/620
-sw_itemvoid_c:\green\ Avail Fuel Max Payload	12,000/5.443
-sw_itemvoid_c:\green\ Avail Fuel Exec Payload	12,500/5.669
-sw_itemvoid_c:\green\ == Operating Speed:
-sw_itemvoid_c:\green\ vs0	= 115 Stall Speed, Landing Configuration Vso 115
-sw_itemvoid_c:\green\ vs1	= 136 Stall Speed, Clean Vs1 136 KIAS
-sw_itemvoid_c:\green\ vs	= 140 Minimum Controllable Speed Vs 140 KIAS
-sw_itemvoid_c:\green\ vx	= 270 Best Angle of Climb Vx 270 KIAS
-sw_itemvoid_c:\green\ vy	= 300 Best Rate of Climb Vy 300 KIAS
-sw_itemvoid_c:\green\ vfe	= 180 Maximum flaps Extended Speed Vfe 180 KIAS
-sw_itemvoid_c:\green\ vmo1= 270 Maximum Operating Speed (Sea Level to 8,00
-sw_itemvoid_c:\green\ vmo2= 350 Maximum Operating Speed (Above 8,000 ft) V
-sw_itemvoid_c:\green\ vmo3= 0.935 Maximum Mach Number Vmo 0.935 Mach
-sw_itemvoid_c:\green\ vle	= 210 -- Maximum Gear Operating Speed Vle 210 KIAS
-sw_itemvoid_c:\green\ vlo	= 210 -- Maximum Gear Extended Speed Vlo 210 KIAS
-sw_itemvoid_c:\green\ 270Kts IAS S.L. to 8000 FT
-sw_itemvoid_c:\green\ 350Kts IAS 8000 to 30,6050 FT
-sw_itemvoid_c:\green\ .92M at and above 30650 FT
-sw_itemvoid_c:\white\ =============================
-sw_itemvoid_c:\yellow\ FLAP GEAR SPEEDS
-sw_itemvoid_c:\green\ 5°  250KIAS
-sw_itemvoid_c:\green\ 15° 210KIAS
-sw_itemvoid_c:\green\ 35° 185KIAS
-sw_itemvoid_c:\green\ FLAPS FULL 180KIAS
-sw_itemvoid_c:\green\ GEAR OPERATING 210KIAS
-sw_itemvoid::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+sw_itemvoid_c:\white\ ========== Weights (lb/kg)	Citation X, CE-750
+sw_itemvoid_c:\green\ Max Ramp: \yellow\36,400 / 16.510
+sw_itemvoid_c:\green\ Max Takeoff: \yellow\31,400 / 14.242
+sw_itemvoid_c:\green\ Max Landing: \yellow\31,800 / 14.424
+sw_itemvoid_c:\green\ Zero Fuel: \yellow\24,400 / 11.067
+sw_itemvoid_c:\green\ BOW: \yellow\22,100 / 10.024
+sw_itemvoid_c:\green\ Max Payload: \yellow\2,300 / 1.043
+sw_itemvoid_c:\green\ Useful Load: \yellow\14,300 / 6.486
+sw_itemvoid_c:\green\ Executive Payload: \yellow\1,800 / 816
+sw_itemvoid_c:\green\ Max Fuel: \yellow\12,931 / 5.865
+sw_itemvoid_c:\green\ Avail Payload Max Fuel: \yellow\1,369 / 620
+sw_itemvoid_c:\green\ Avail Fuel Max Payload: \yellow\12,000 / 5.443
+sw_itemvoid_c:\green\ Avail Fuel Exec Payload: \yellow\12,500 / 5.669
+sw_itemvoid_c:\white\ ========== Operating Speeds:
+sw_itemvoid_c:\green\ vs0: \yellow\115 \white\(Stall Speed, Landing Configuration)
+sw_itemvoid_c:\green\ vs1: \yellow\136 \white\(Stall Speed, Clean)
+sw_itemvoid_c:\green\ vs: \yellow\140 \white\(Minimum Controllable Speed)
+sw_itemvoid_c:\green\ vx: \yellow\270 \white\(Best Angle of Climb)
+sw_itemvoid_c:\green\ vy: \yellow\300 \white\(Best Rate of Climb)
+sw_itemvoid_c:\green\ vfe: \yellow\180 \white\(Maximum flaps Extended Speed Vfe)
+sw_itemvoid_c:\green\ vmo1: \yellow\270 \white\(Maximum Operating Speed Sea Level to 8,000 ft)
+sw_itemvoid_c:\green\ vmo2: \yellow\350 \white\(Maximum Operating Speed Above 8,000 ft)
+sw_itemvoid_c:\green\ vmo3: \yellow\0.935 \white\(Maximum Mach Number)
+sw_itemvoid_c:\green\ vle: \yellow\210 -- \white\(Maximum Gear Operating Speed)
+sw_itemvoid_c:\green\ vlo: \yellow\210 -- \white\(Maximum Gear Extended Speed)
+sw_itemvoid_c:\green\ S.L. to 8000 FT: \yellow\270Kts KIAS 
+sw_itemvoid_c:\green\ 8000 to 30,6050 FT: \yellow\350Kts KIAS 
+sw_itemvoid_c:\green\ At & above 30650 FT: \yellow\.92M 
+sw_itemvoid_c:\white\ ========== Flap & Gear Speeds
+sw_itemvoid_c:\green\ 5°: \yellow\250 KIAS
+sw_itemvoid_c:\green\ 15°: \yellow\210 KIAS
+sw_itemvoid_c:\green\ 35°: \yellow\185 KIAS
+sw_itemvoid_c:\green\ FLAPS FULL: \yellow\180 KIAS
+sw_itemvoid_c:\green\ GEAR OPERATING: \yellow\210 KIAS
 
 #########
-sw_checklist:ELECTRICAL POWER UP:ELECTRICAL POWER UP
+sw_checklist:ORIGINATING CHECKS:ORIGINATING CHECKS
 #########
-sw_item_c:\white\All paper work on board|checked
-
-sw_itemvoid_c:\orange\== Initial checks
-sw_item_c:\white\PARKING BRAKE|SET:sim/cockpit2/controls/parking_brake_ratio:>0
-sw_item_c:\white\STANDBY POWER [LPL]\grey\,TEST|SET:laminar/CitX/electrical/battery_stby_pwr:-1
-sw_item_c:\white\STANDBY POWER [LPL]\grey\,ON|SET:laminar/CitX/electrical/battery_stby_pwr:1
-sw_item_c:\white\PANEL LIGHTS|AS REQUIRED:1:1
-sw_item_c:\white\EMERG LT [LPL]|ON:laminar/CitX/lights/emerg_light_switch:>0
-sw_item_c:\white\EXT PWR [RLP]|AS REQUIRED:1:1
+sw_itemvoid_c:\orange\== INITIAL CHECKS
+sw_item_c:\white\All paper work on board|CHECKED:1:1
+sw_item_c:\white\CIRCUIT BREAKERS|CHECKED:1:1
+sw_item_c:\white\FIRE EXTINGUISHER|CHECKED:1:1
 sw_item_c:\white\BATTERY SWITCH 1 & 2 [LPL]|ON:(laminar/CitX/electrical/battery_right:1)&&(laminar/CitX/electrical/battery_left:1)
-sw_item_c:\white\LANDING GEAR HANDLE [LPL]\grey\, DOWN|CHECKED:sim/cockpit2/controls/gear_handle_down:1
-sw_item_c:\white\  GREEN LANDING GEAR LIGHT\grey\, ILLUMINATED|CHECKED:(laminar/CitX/landing_gear/annunc_right:>0)&&(laminar/CitX/landing_gear/annunc_left:>0)&&(laminar/CitX/landing_gear/annunc_nose:>0)
-sw_item_c:\white\FLAP LEVER|UP:sim/cockpit2/controls/flap_ratio:0
+sw_item_c:\white\AUX HYD PUMP A [RPL]|ON:laminar/CitX/hydraulics/aux_pump:1
+sw_item_c:\white\PARKING BRAKE|ON:sim/cockpit2/controls/parking_brake_ratio:>0
+sw_item_c:\white\LANDING GEAR HANDLE [LPL]\yellow\, DOWN|CHECKED:sim/cockpit2/controls/gear_handle_down:1
+sw_item_c:\white\  GREEN LANDING GEAR LIGHT\yellow\, ILLUMINATED|CHECKED:(sim/flightmodel/movingparts/gear1def:>0)&&(sim/flightmodel/movingparts/gear2def:>0)&&(sim/flightmodel/movingparts/gear3def:>0)
+sw_item_c:\white\SPEED BRAKES & GROUND SPOILERS [PDL]\yellow\, DOWN|CHECKED:sim/cockpit2/controls/speedbrake_ratio:0
+sw_item_c:\white\POWER LEVERS [PDL]|CUT OFF:(sim/flightmodel2/engines/has_fuel_flow_after_mixture[0]:0)&&(sim/flightmodel2/engines/has_fuel_flow_after_mixture[1]:0)
+sw_item_c:\white\FLAP LEVER [PDL]\yellow\, UP|CHECKED:sim/cockpit2/controls/flap_ratio:0
+sw_item_c:\white\PANEL LIGHTS|AS REQUIRED:1:1
+sw_item_c:\white\DAY/NITE DIM SWITCH|OFF:laminar/CitX/lights/dim_lights_switch:0
+sw_item_c:\white\EICAS SWITCH [LPL]|ON:laminar/CitX/electrical/avionics_eicas:1
+sw_item_c:\white\BATTERIES [EICAS]\yellow\,> 22 VOLTS|CHECKED:(sim/cockpit2/electrical/battery_voltage_indicated_volts[1]:>22)&&(sim/cockpit2/electrical/battery_voltage_indicated_volts[2]:>22)
+sw_item_c:\white\EXT PWR [RLP]|AS REQUIRED:1:1
+sw_item_c:\white\OXYGEN PRESSURE [LPL]\yellow\, IN GREEN ARC|CHECKED:sim/cockpit2/oxygen/indicators/o2_bottle_pressure_psi:>1500
+sw_item_c:\white\EMERG LIGHTS [LPL]|CHECKED & ARMED:laminar/CitX/lights/emerg_light_switch:>0
+sw_item_c:\white\STANDBY POWER [LPL]\yellow\,TEST|SET:laminar/CitX/electrical/battery_stby_pwr:-1
+sw_item_c:\white\STANDBY POWER [LPL]\yellow\,ON|SET:laminar/CitX/electrical/battery_stby_pwr:1
+sw_item_c:\white\DC LOAD SHED/EMER PWR [LPL]|NORM/CHECKED:laminar/CitX/electrical/load_shed:0
 
-sw_itemvoid_c:\orange\== APU ON
+sw_itemvoid_c:\orange\== APU START
 sw_item_c:\white\APU SYSTEM MASTER [RS]|ON:laminar/CitX/APU/master_switch:1
 sw_item_c:\white\APU TEST [RS]|PUSH:laminar/CitX/APU/test_button:1
 sw_item_c:\white\APU STARTER [RS]|HOLD TILL START:laminar/CitX/APU/starter_switch:1
@@ -76,35 +82,12 @@ sw_item_c:\white\APU AMPS LESS 200A|CHECK:sim/cockpit/electrical/generator_apu_a
 
 sw_itemvoid_c:\orange\== AVIONICS
 sw_item_c:\white\AVIONICS SWITCH [LPL]|ON:laminar/CitX/electrical/avionics:1
-sw_item_c:\white\EICAS SWITCH [LPL]|ON:laminar/CitX/electrical/avionics_eicas:1
 sw_item_c:\white\DISPLAYS|ON":sim/cockpit2/switches/instrument_brightness_ratio[7]>0.5
-sw_item_c:\white\BATTERIES\grey\,24 VOLTS|CHECK:(sim/cockpit2/electrical/battery_voltage_indicated_volts[1]:>24)&&(sim/cockpit2/electrical/battery_voltage_indicated_volts[2]:>24)
-sw_continue:PRE FLIGHT
-
-#########
-sw_checklist:PRE FLIGHT:PRE FLIGHT
-#########
-sw_item_c:\white\NAV LIGHTS [RPL]|ON:laminar/CitX/lights/navigation:1
-sw_item_c:\white\PASSENGER OXYGEN [LPL]|AUTO:laminar/CitX/oxygen/pass_oxy:1
-sw_item_c:\white\OXY PRESSURE [LPL]|IN GREEN AREA:sim/cockpit2/oxygen/indicators/o2_bottle_pressure_psi:>1600
+sw_item_c:\white\RUDDER & AILERON TRIM [PDL]|RESET:(sim/cockpit2/controls/aileron_trim:0)&&(sim/cockpit2/controls/rudder_trim:0)
+sw_item_c:\white\ROTARY TEST [PDL]|ALL TESTS CHECKED:sim/cockpit/warnings/autopilot_test_ap_lit:1
 sw_item_c:\white\FUEL XFER SELECTOR [LPL]|OFF:sim/cockpit2/fuel/fuel_crossfeed_selector:0
-sw_item_c:\white\GRVTY XFLOW [LPL]|OFF:laminar/CitX/fuel/gravity_flow:0
-sw_item_c:\white\CTR WING XFER LH & RH [LPL]|BOTH NORM:(laminar/CitX/fuel/transfer_left:2)&&(laminar/CitX/fuel/transfer_right:2)
-sw_item_c:\white\FUEL BOOST BOTH [LPL]|NORM:(laminar/CitX/fuel/boost_left:-1)&&(laminar/CitX/fuel/boost_right:-1)
-sw_item_c:\white\LOAD SHED [LPL]|NORM:laminar/CitX/electrical/load_shed:0
-sw_item_c:\white\IGNITION SWITCHES [LPL]|OFF:(laminar/CitX/engine/ignition_switch_right:0)&&(laminar/CitX/engine/ignition_switch_left:0)
-sw_item_c:\white\FADEC SWITCHES [LPL]|NORMAL:(sim/cockpit/engine/fadec_on[0]:1)&&(sim/cockpit/engine/fadec_on[1]:1)
-sw_item_c:\white\FUEL QUANTITY [EICAS]|CHECK BAL:sim/cockpit2/fuel/fuel_quantity[1]-sim/cockpit2/fuel/fuel_quantity[2]:>-100|<100
-sw_item_c:\white\PRESSURIZATION SOURCES [RPL]|ALL NORM:(laminar/CitX/pressurization/alt_sel:0)&&(laminar/CitX/pressurization/manual:0)&&(laminar/CitX/pressurization/pac_bleed:0)
-sw_item_c:\white\PRESSURIZATION ALT [RPL]|SET
-sw_item_c:\white\FLAP LEVER [PDL]\grey\, UP|SET:sim/cockpit2/controls/flap_ratio:0
-sw_item_c:\white\ROTARY TEST [PDL]|CHECK:sim/cockpit/warnings/autopilot_test_ap_lit:1
-
-sw_itemvoid_c:\orange\== Flight Preps
-sw_item_c:\white\FMS|SET UP
-sw_item_c:\white\ATIS|RECEIVED
-sw_item_c:\white\CLEARANCE|OBTAINED
-sw_item_c:\white\TAKEOFF BRIEF|COMPLETED
+sw_item_c:\white\AIR CONDITIONING PACK SWITCHES [RPL]|AUTO:(laminar/CitX/bleedair/air_cond_cockpit:1)&&(laminar/CitX/bleedair/air_cond_cabin:1)
+sw_item_c:\white\NAV LIGHTS [RPL]|ON:laminar/CitX/lights/navigation:1
 sw_continue
 
 #########
@@ -116,22 +99,60 @@ sw_item_c:\white\EXTERNAL POWER OR APU|ON:(laminar/CitX/electrical/ext_pwr:1)||(
 sw_item_c:\white\AVIONICS SWITCH|ON:laminar/CitX/electrical/avionics:1
 sw_item_c:\white\EICAS SWITCH|ON:laminar/CitX/electrical/avionics_eicas:1
 sw_item_c:\white\PARKING BRAKE|SET:sim/cockpit2/controls/parking_brake_ratio:>0
-sw_item_c:\white\NEXT
+sw_item_c:\white\CONTINUE|...
+sw_continue
+
+#########
+sw_checklist:ENGINE START CHECKS:ENGINE START CHECKS
+#########
+sw_item_c:\white\AUX HYD PUMP A [RPL]|ON:laminar/CitX/hydraulics/aux_pump:1
+sw_item_c:\white\PARKING BRAKE [PDL]|ON:sim/cockpit2/controls/parking_brake_ratio:>0
+sw_item_c:\white\EICAS|CHECK WARNING / ERRORS:1:1
+sw_item_c:\white\IRS|ALIGNED/NO FLAGS:1:1
+sw_item_c:\white\STANDBY ATTITUDE ADI [CPL]|UNCAGED:sim/cockpit/gyros/gyr_cage_ratio[2]:<1
+sw_item_c:\white\ATIS|BRIEFED
+sw_item_c:\white\ALTIMETERS (3)|SET QNH
+sw_item_c:\white\CLEARANCE|BRIEFED
+sw_item_c:\white\FLIGHT DIRECTOR|SET:1:1
+sw_item_c:\white\FMS|PROGRAMMED/VERIFIED
+sw_item_c:\white\FUEL QUANTITY [EICAS]|CHECK BAL:sim/cockpit2/fuel/fuel_quantity[1]-sim/cockpit2/fuel/fuel_quantity[2]:>-100|<100
+sw_item_c:\white\PRESSURIZATION SOURCES [RPL]|ALL NORM:(laminar/CitX/pressurization/alt_sel:0)&&(laminar/CitX/pressurization/manual:0)&&(laminar/CitX/pressurization/pac_bleed:0)
+sw_item_c:\white\PRESSURIZATION ALT [RPL]|SET LAND ALT
+sw_item_c:\white\IGNITION SWITCHES [LPL]|NORM:(laminar/CitX/engine/ignition_switch_right:-1)&&(laminar/CitX/engine/ignition_switch_left:-1)
+sw_continue
+
+#########
+sw_checklist:PUSHBACK:PUSHBACK
+#########
+sw_item_c:\white\DOORS|CLOSED:sim/cockpit2/switches/door_open[0]:0
+sw_item_c:\white\PARKING BRAKE [PDL]|ON:sim/cockpit2/controls/parking_brake_ratio:>0
+sw_item_c:\white\IGNITION SWITCHES [LPL]|NORM:(laminar/CitX/engine/ignition_switch_right:-1)&&(laminar/CitX/engine/ignition_switch_left:-1)
+sw_item_c:\white\EXT PWR [LPL]|OFF/DISCONNECTED:sim/cockpit/electrical/gpu_on:0
+sw_item_c:\white\AUX PUMP A|OFF:sim/cockpit2/switches/electric_hydraulic_pump_on:0
+sw_item_c:\white\PUSHBACK SERVICE|ENGAGE
+sw_item_c:\white\COMMUNICATION WITH GROUND|ESTABLISH
+sw_item_c:\white\PARKING BRAKE|RELEASED
 sw_continue
 
 #########
 sw_checklist:PRE START:PRE START
 #########
-sw_item_c:\white\AUX PUMP A [RPL]|ON:laminar/CitX/hydraulics/aux_pump:1
 sw_item_c:\white\HYDRAULIC A PRESSURE [EICAS]|CHECK >2000 PSI:sim/cockpit2/hydraulics/indicators/hydraulic_pressure_1:>2000
 sw_item_c:\white\GND REC [RPL]|ON:sim/cockpit/electrical/beacon_lights_on:1
 sw_item_c:\white\PARKING BRAKE [PDL REAR]|SET:laminar/CitX/brakes/park_handle:1
 sw_item_c:\white\DOORS|CLOSED:sim/cockpit2/switches/door_open[0]:0
 sw_item_c:\white\SEAT BELT LTS [RPL]|PASS SAFETY:sim/cockpit2/switches/fasten_seat_belts:1
-sw_item_c:\white\CKPT PAC & CAB PAC [RPL]|OFF:(sim/cockpit2/bleedair/actuators/pack_left:0)&&(sim/cockpit2/bleedair/actuators/pack_right:0)
 sw_item_c:\white\L & R ENG BLD AIR [RPL]|HP/LP:(sim/cockpit2/bleedair/actuators/engine_bleed_sov[0]:1)&&(sim/cockpit2/bleedair/actuators/engine_bleed_sov[1]:1)
-sw_item_c:\white\POWER LEVERS [PDL]|CUT OFF:(sim/flightmodel2/engines/has_fuel_flow_after_mixture[0]:0)&&(sim/flightmodel2/engines/has_fuel_flow_after_mixture[1]:0)
 sw_item_c:\white\APU BLEED AIR [RPL]|ON:sim/cockpit2/bleedair/actuators/apu_bleed:1
+
+sw_item_c:\white\PASSENGER OXYGEN [LPL]|AUTO:laminar/CitX/oxygen/pass_oxy:1
+sw_item_c:\white\GRVTY XFLOW [LPL]|OFF:laminar/CitX/fuel/gravity_flow:0
+sw_item_c:\white\CTR WING XFER LH & RH [LPL]|BOTH NORM:(laminar/CitX/fuel/transfer_left:2)&&(laminar/CitX/fuel/transfer_right:2)
+sw_item_c:\white\FUEL BOOST BOTH [LPL]|NORM:(laminar/CitX/fuel/boost_left:-1)&&(laminar/CitX/fuel/boost_right:-1)
+sw_item_c:\white\FADEC SWITCHES [LPL]|NORMAL:(sim/cockpit/engine/fadec_on[0]:1)&&(sim/cockpit/engine/fadec_on[1]:1)
+sw_item_c:\white\FLAP LEVER [PDL]\grey\, UP|SET:sim/cockpit2/controls/flap_ratio:0
+sw_item_c:\white\ROTARY TEST [PDL]|CHECK:sim/cockpit/warnings/autopilot_test_ap_lit:1
+
 sw_continue
 
 #########
@@ -188,7 +209,6 @@ sw_item_c:\white\APU GEN BLEED AIR [RS]|OFF:(sim/cockpit2/bleedair/actuators/apu
 sw_item_c:\white\APU STARTER [RS]|PRESS DOWN TO STOP:sim/cockpit/engine/APU_running:0
 sw_item_c:\white\APU SYSTEM MASTER [RS]|OFF:laminar/CitX/APU/master_switch:0
 sw_item_c:\white\PRESSURIZATION SOURCES [RPL]|ALL NORM:(laminar/CitX/pressurization/alt_sel:0)&&(laminar/CitX/pressurization/manual:0)&&(laminar/CitX/pressurization/pac_bleed:0)
-sw_item_c:\white\SPEED BRAKES & GROUND SPOILERS [PDL]|DOWN:sim/cockpit2/controls/speedbrake_ratio:0
 
 sw_itemvoid_c:\orange\==
 sw_item_c:\white\EICAS|CHECK WARNING/ERRORS
